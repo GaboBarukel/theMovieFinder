@@ -1,24 +1,22 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 //TODO: Loading Component
 import Loading from './Loading'
 import MovieItem from "./MovieItem"
 import Button from "../UI/Button"
 
+const apiKey = import.meta.env.VITE_API_KEY
+const URL = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es-419&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
+
 const PopularMovieList = () => {
     const [popularMovies, setPopularMovies] = useState(null);
     const [allMoviesDisplay, setAllMoviesDisplay] = useState(false);
   
-    //TODO: change axios to fetch
-    // useEffect(() => {
-    //   axios
-    //     .get(
-    //       "https://api.themoviedb.org/3/discover/movie?api_key=5ccf9793fb9ce59b758d5b9a8ee6ed6e&language=es-419&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate"
-    //     )
-    //     .then((result) => {
-    //       setPopularMovies(result.data.results);
-    //     });
-    // }, []);
+    useEffect(() => {
+      fetch(URL)
+        .then(res => res.json())
+        .then(data => setPopularMovies(data.results))     
+    }, []);
   
     const showAllHandler = () => {
       if (!allMoviesDisplay) {
