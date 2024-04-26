@@ -1,3 +1,5 @@
+import './searchForm.css'
+
 const SearchForm = (props) => {
     const searchHandler = (e) => {
       e.preventDefault();
@@ -14,17 +16,14 @@ const SearchForm = (props) => {
     };
   
     return (
-      <div className='form'>
+      <div className='formDiv'>
+        <h1>Movie Finder</h1>
         <form onSubmit={searchHandler}>
           <input
             id="searchInput"
-            placeholder="Buscar"
-            onChange={onChangeHandler}
-            className='input'
+            placeholder="Search"
+            onChange={onChangeHandler}            
           />
-          <label htmlFor="searchInput" className='inputLabel'>
-            Buscar
-          </label>
         </form>
       </div>
     );

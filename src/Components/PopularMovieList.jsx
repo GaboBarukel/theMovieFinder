@@ -7,6 +7,7 @@ import Button from "../UI/Button"
 
 const apiKey = import.meta.env.VITE_API_KEY
 const URL = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es-419&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
+let buttonText = 'show more'
 
 const PopularMovieList = () => {
     const [popularMovies, setPopularMovies] = useState(null);
@@ -20,8 +21,10 @@ const PopularMovieList = () => {
   
     const showAllHandler = () => {
       if (!allMoviesDisplay) {
+        buttonText = 'show less'
         setAllMoviesDisplay(true);
       } else {
+        buttonText = 'show more'
         setAllMoviesDisplay(false);
       }
     };
@@ -29,8 +32,8 @@ const PopularMovieList = () => {
     return (
       <>
         <div className='titleContainer'>
-          <h2 className='title'>PELÍCULAS POPULARES</h2>
-          <Button onClick={showAllHandler}>VER MÁS</Button>
+          <h2 className='title'>Popular Movies</h2>
+          <Button onClick={showAllHandler}>{buttonText}</Button>
         </div>
         <div className='movieContainer'>
           {popularMovies ? (

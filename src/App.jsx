@@ -22,8 +22,7 @@ function App() {
   };
 
   return (
-    <>
-      <h1>Movie Finder</h1>
+    <>      
       <SearchForm
         onShow={showSearchHandler}
         onSearchPass={searchTermPass}

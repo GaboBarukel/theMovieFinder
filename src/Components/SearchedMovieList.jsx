@@ -32,7 +32,7 @@ const SearchedMoviesList = ({onSearchTerm}) => {
     return (
       <>
         <div className='titleContainer'>          
-          <h2 className='title'>RESULTADOS</h2>
+          <h2 className='title'>Search Results</h2>
           <Button onClick={showAllHandler}>VER MÁS</Button>
         </div>
         <div className='movieContainer'>

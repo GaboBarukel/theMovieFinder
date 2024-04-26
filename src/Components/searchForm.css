@@ -1,0 +1,16 @@
+.formDiv{    
+    padding: 30px 20px;
+    background-color: var(--secondary-blue);
+}
+/* TODO: check autocomplete */
+input {
+    font-size: 1.2rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.2rem;
+    color: var(--main-bg-color);
+    background-color: var(--main-font-color);
+    border: none;
+}
+input:focus {
+    outline: none;
+}
