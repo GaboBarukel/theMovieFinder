@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
-
-:root{
-  --main-bg-color: #D4F1F4;
-  --main-font-color: #05445E;
-  --secondary-gren: #75E6DA;
-  --secondary-blue: #189AB4;
+/* TODO: check the scroll on update movieList and movieItem */
+:root {
+  --main-bg-color: #d4f1f4;
+  --main-font-color: #05445e;
+  --secondary-gren: #75e6da;
+  --secondary-blue: #189ab4;
 }
 
 * {
@@ -20,7 +20,8 @@ body {
   background-color: var(--main-bg-color);
 }
 
-h1, h2 {
+h1,
+h2 {
   margin-bottom: 0.5rem;
   color: var(--main-font-color);
 }

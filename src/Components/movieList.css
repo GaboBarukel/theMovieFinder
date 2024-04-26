@@ -1,9 +1,18 @@
 .titleContainer {
-    padding: 10px 20px;
+  padding: 10px 20px;
 }
 
 ul {
-    display: grid;
-    grid-template-columns: auto-fit repeat(6, 1fr);
-    list-style-type: none;  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: 5px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.poster {
+  width: 100%;
+  height: fit-content;
+  object-fit: cover;
+  border-radius: 5px;
 }
