@@ -1,0 +1,9 @@
+.titleContainer {
+    padding: 10px 20px;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: auto-fit repeat(6, 1fr);
+    list-style-type: none;  
+}

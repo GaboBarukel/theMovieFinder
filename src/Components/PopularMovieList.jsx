@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import './movieList.css'
 
 //TODO: Loading Component
 import Loading from './Loading'
@@ -32,7 +33,7 @@ const PopularMovieList = () => {
     return (
       <>
         <div className='titleContainer'>
-          <h2 className='title'>Popular Movies</h2>
+          <h2>Popular Movies</h2>
           <Button onClick={showAllHandler}>{buttonText}</Button>
         </div>
         <div className='movieContainer'>
