@@ -36,7 +36,7 @@ const PopularMovieList = () => {
         <h2>Popular Movies</h2>
         <Button onClick={showAllHandler}>{buttonText}</Button>
       </div>
-      <div className="movieContainer">
+      <div className="movieListContainer">
         {popularMovies ? (
           <ul className="list">
             {(!allMoviesDisplay
