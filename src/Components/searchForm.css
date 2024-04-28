@@ -1,7 +1,16 @@
 .formDiv {
-  padding: 20px 20px;
+  min-height: 45svh;
+  padding: 1em 2em;
   background-color: var(--secondary-blue);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
+
+.title {
+  grid-column: span 2;
+  margin-block: auto;
+}
+
 /* TODO: check autocomplete */
 input {
   font-size: 1.2rem;

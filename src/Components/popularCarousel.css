@@ -1,0 +1,31 @@
+.carousel-img-container {
+  margin: auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  width: 100%;
+}
+
+.carousel-img {
+  max-height: 220px;
+  grid-column-start: 2;
+}
+
+.slider-btn {
+  all: unset;
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  padding: 0.25rem;
+  cursor: pointer;
+  background: var(--secondary-green);
+}
+
+.slider-btn > * {
+  stroke: var(--main-font-color);
+}
+
+.right-btn {
+  right: 0;
+}
