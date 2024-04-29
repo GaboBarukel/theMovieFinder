@@ -52,7 +52,7 @@ const PopularCarousel = ({ popularMovies }) => {
           <path d="M11 17h6l-4 -5l4 -5h-6l-4 5z" />
         </svg>
       </button>
-      {popularMovies ? (
+      {/* {popularMovies ? (
         <img
           src={`https://image.tmdb.org/t/p/w500${
             popularMovies[
@@ -63,7 +63,7 @@ const PopularCarousel = ({ popularMovies }) => {
         />
       ) : (
         <Loading />
-      )}
+      )} */}
       {popularMovies ? (
         <img
           src={`https://image.tmdb.org/t/p/w500${popularMovies[imageIndex].poster_path}`}
@@ -72,6 +72,18 @@ const PopularCarousel = ({ popularMovies }) => {
       ) : (
         <Loading />
       )}
+      {/* {popularMovies ? (
+        <img
+          src={`https://image.tmdb.org/t/p/w500${
+            popularMovies[
+              imageIndex === popularMovies.length - 1 ? 0 : imageIndex + 1
+            ].poster_path
+          }`}
+          className="carousel-img-af"
+        />
+      ) : (
+        <Loading />
+      )} */}
 
       <button onClick={showNextImage} className="slider-btn right-btn">
         <svg
@@ -86,18 +98,6 @@ const PopularCarousel = ({ popularMovies }) => {
           <path d="M13 7h-6l4 5l-4 5h6l4 -5z" />
         </svg>
       </button>
-      {popularMovies ? (
-        <img
-          src={`https://image.tmdb.org/t/p/w500${
-            popularMovies[
-              imageIndex === popularMovies.length - 1 ? 0 : imageIndex + 1
-            ].poster_path
-          }`}
-          className="carousel-img-af"
-        />
-      ) : (
-        <Loading />
-      )}
     </div>
   );
 };
