@@ -54,12 +54,25 @@ const PopularCarousel = ({ popularMovies }) => {
       </button>
       {popularMovies ? (
         <img
+          src={`https://image.tmdb.org/t/p/w500${
+            popularMovies[
+              imageIndex === 0 ? popularMovies.length - 1 : imageIndex - 1
+            ].poster_path
+          }`}
+          className="carousel-img-bf"
+        />
+      ) : (
+        <Loading />
+      )}
+      {popularMovies ? (
+        <img
           src={`https://image.tmdb.org/t/p/w500${popularMovies[imageIndex].poster_path}`}
           className="carousel-img"
         />
       ) : (
         <Loading />
       )}
+
       <button onClick={showNextImage} className="slider-btn right-btn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -73,6 +86,18 @@ const PopularCarousel = ({ popularMovies }) => {
           <path d="M13 7h-6l4 5l-4 5h6l4 -5z" />
         </svg>
       </button>
+      {popularMovies ? (
+        <img
+          src={`https://image.tmdb.org/t/p/w500${
+            popularMovies[
+              imageIndex === popularMovies.length - 1 ? 0 : imageIndex + 1
+            ].poster_path
+          }`}
+          className="carousel-img-af"
+        />
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 };
