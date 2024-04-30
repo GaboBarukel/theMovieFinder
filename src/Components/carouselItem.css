@@ -1,0 +1,14 @@
+.item-container {
+  min-height: 220px;
+  width: 100%;
+  padding-inline: 4em;
+  transition: translate 300ms ease-in-out;
+}
+
+img {
+  aspect-ratio: 2/3;
+  display: block;
+  object-fit: cover;
+  max-height: 220px;
+  border-radius: 0.5rem;
+}

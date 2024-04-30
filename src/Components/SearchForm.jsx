@@ -11,7 +11,7 @@ const SearchForm = (props) => {
   useEffect(() => {
     fetch(URL)
       .then((res) => res.json())
-      .then((data) => setPopularMovies(data.results.slice(0, 6)));
+      .then((data) => setPopularMovies(data.results.slice(0, 10)));
   }, []);
 
   // const searchHandler = (e) => {
