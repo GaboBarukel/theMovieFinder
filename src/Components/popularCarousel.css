@@ -7,6 +7,7 @@
 }
 
 .carousel-img {
+  aspect-ratio: 2/3;
   object-fit: cover;
   max-height: 220px;
   border-radius: 0.5rem;
