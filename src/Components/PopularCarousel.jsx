@@ -30,6 +30,7 @@ const PopularCarousel = ({ popularMovies }) => {
 
   return (
     <div className="carousel-img-container">
+      <div className="carousel-gradient"></div>
       <button
         onClick={showPrevImage}
         className="slider-btn left-btn"

@@ -3,8 +3,8 @@
 :root {
   --main-bg-color: #d4f1f4;
   --main-font-color: #05445e;
-  --secondary-gren: #75e6da;
-  --secondary-blue: #189ab4;
+  --secondary-green: #75e6da;
+  --secondary-blue: rgb(24, 154, 180);
 }
 
 * {
