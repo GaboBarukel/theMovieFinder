@@ -11,7 +11,7 @@ const PopularCarousel = ({ popularMovies }) => {
   function showPrevImage() {
     setImageIndex((index) => {
       if (index === 0) {
-        return popularMovies.length - 1;
+        return 0;
       } else {
         return index - 1;
       }
@@ -21,7 +21,7 @@ const PopularCarousel = ({ popularMovies }) => {
   function showNextImage() {
     setImageIndex((index) => {
       if (index === popularMovies.length - 1) {
-        return 0;
+        return popularMovies.length - 1;
       } else {
         return index + 1;
       }
@@ -30,7 +30,13 @@ const PopularCarousel = ({ popularMovies }) => {
 
   return (
     <div className="carousel-img-container">
-      <button onClick={showPrevImage} className="slider-btn left-btn">
+      <button
+        onClick={showPrevImage}
+        className="slider-btn left-btn"
+        style={
+          imageIndex === 0 ? { display: "none" } : { display: "inline-block" }
+        }
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="44"
@@ -50,7 +56,15 @@ const PopularCarousel = ({ popularMovies }) => {
       ) : (
         <Loading />
       )}
-      <button onClick={showNextImage} className="slider-btn right-btn">
+      <button
+        onClick={showNextImage}
+        className="slider-btn right-btn"
+        style={
+          imageIndex === popularMovies?.length - 1
+            ? { display: "none" }
+            : { display: "inline-block" }
+        }
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="44"

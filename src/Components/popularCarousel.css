@@ -2,19 +2,20 @@
   position: relative;
   display: flex;
   max-width: 300px;
+  max-height: 220px;
   overflow: hidden;
 }
 
 .slider-btn {
   all: unset;
   position: absolute;
-  top: 2.5em;
-  bottom: 2.5em;
+  top: 0;
+  bottom: 0;
   padding: 0rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  z-index: 5;
-  transition: background-color 150ms ease-in-out, transform 400ms ease-in-out;
+  z-index: 3;
+  transition: background-color 200ms ease-in-out;
 }
 
 .slider-btn:hover {
