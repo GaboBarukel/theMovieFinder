@@ -2,7 +2,7 @@
   max-height: 220px;
   width: 60%;
   padding-inline: 4em;
-  transition: translate 300ms ease-in-out;
+  transition: translate 500ms ease-in-out;
   user-select: none;
 }
 

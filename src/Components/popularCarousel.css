@@ -4,6 +4,7 @@
   max-width: 300px;
   max-height: 220px;
   overflow: hidden;
+  border-radius: 0.5rem;
 }
 
 .slider-btn {
@@ -19,11 +20,11 @@
 }
 
 .slider-btn:hover {
-  background-color: rgb(0, 0, 0, 0.4);
+  background-color: rgb(0, 0, 0, 0.8);
 }
 
 .slider-btn > * {
-  stroke: var(--main-font-color);
+  stroke: var(--secondary-blue);
 }
 
 .left-btn {
