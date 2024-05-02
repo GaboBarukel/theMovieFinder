@@ -2,6 +2,7 @@
   grid-column-start: 3;
   position: relative;
   display: flex;
+  justify-self: center;
   max-width: 300px;
   max-height: 220px;
   overflow: hidden;
@@ -15,10 +16,10 @@
   position: absolute;
   background-image: linear-gradient(
     to left,
-    var(--secondary-blue),
+    var(--secondary-font),
     transparent 22%,
     transparent 78%,
-    var(--secondary-blue)
+    var(--secondary-font)
   );
   top: 0;
   left: 0;
@@ -34,15 +35,17 @@
   border-radius: 0.5rem;
   cursor: pointer;
   z-index: 3;
-  transition: background-color 150ms ease-in-out;
+  opacity: 0.7;
+  transition: opacity 150ms ease-in-out;
 }
 
 .slider-btn:hover {
-  background-color: rgba(24, 154, 180, 0.3);
+  /* background-color: var(--secondary-font); */
+  opacity: 1;
 }
 
 .slider-btn > * {
-  stroke: var(--main-font-color);
+  stroke: var(--secondary-bg);
 }
 
 .left-btn {

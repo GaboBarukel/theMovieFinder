@@ -1,7 +1,7 @@
 .formDiv {
   min-height: 45svh;
   padding: 1em 1em;
-  background-color: var(--secondary-blue);
+  background-color: var(--secondary-font);
   display: grid;
   align-items: center;
   grid-template-columns: repeat(3, minmax(min(100%, 250px), 1fr));
@@ -9,7 +9,10 @@
 
 .title {
   /* grid-column: span 2; */
-  margin-block: auto;
+  /* margin-block: auto; */
+  align-self: center;
+  justify-self: center;
+  font-size: 6rem;
 }
 
 /* TODO: check autocomplete */
