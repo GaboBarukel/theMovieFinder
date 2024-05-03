@@ -3,16 +3,23 @@
   display: grid;
   align-items: center;
   grid-template-columns: repeat(3, minmax(min(100%, 250px), 1fr));
+  background: linear-gradient(
+    45deg,
+    var(--main-bg-color) 0%,
+    var(--secondary-font) 70%
+  );
 }
 
 .sectionTitle {
-  grid-column-start: 2;
-  text-align: center;
+  grid-column-start: 3;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: end;
   margin-block: 0;
 }
 
 .movieListContainer {
-  padding: 0em 1em;
+  padding: 1.5em 1em;
 }
 
 ul {

@@ -1,7 +1,7 @@
 .item-container {
   max-height: 220px;
   width: 100%;
-  padding-inline: 4em;
+  padding-inline: 10rem;
   transition: translate 500ms ease-in-out;
   user-select: none;
 }

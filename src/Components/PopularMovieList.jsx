@@ -33,7 +33,7 @@ const PopularMovieList = () => {
   return (
     <>
       <div className="titleContainer">
-        <h2 className="sectionTitle">Popular Movies</h2>
+        <h2 className="sectionTitle">POPULAR</h2>
         {/* <Button onClick={showAllHandler}>{buttonText}</Button> */}
       </div>
       <div className="movieListContainer">

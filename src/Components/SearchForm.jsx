@@ -31,9 +31,9 @@ const SearchForm = (props) => {
   return (
     <div className="formDiv">
       <h1 className="title">
-        Movie
+        MOVIE
         <br />
-        Finder
+        FINDER
       </h1>
       {/* <form onSubmit={searchHandler}>
         <input
