@@ -33,14 +33,14 @@ const PopularMovieList = () => {
   return (
     <>
       <div className="titleContainer">
-        <h2>Popular Movies</h2>
-        <Button onClick={showAllHandler}>{buttonText}</Button>
+        <h2 className="sectionTitle">POPULAR</h2>
+        {/* <Button onClick={showAllHandler}>{buttonText}</Button> */}
       </div>
       <div className="movieListContainer">
         {popularMovies ? (
           <ul className="list">
             {(!allMoviesDisplay
-              ? popularMovies.slice(0, 6)
+              ? popularMovies.slice(0, 3)
               : popularMovies
             ).map((movie) => (
               <MovieItem movieData={movie} key={movie.id} />
