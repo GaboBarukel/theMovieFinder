@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-import PopularMovieList from './Components/PopularMovieList'
-import SearchedMoviesList from './Components/SearchedMovieList'
-import SearchForm from './Components/SearchForm'
+import PopularMovieList from "./Components/PopularMovieList";
+import SearchedMoviesList from "./Components/SearchedMovieList";
+import HeroSection from "./Components/HeroSection";
 //import './App.css'
 
 function App() {
@@ -22,8 +22,8 @@ function App() {
   };
 
   return (
-    <>      
-      <SearchForm
+    <>
+      <HeroSection
         onShow={showSearchHandler}
         onSearchPass={searchTermPass}
         onInput={onEmptyInputHandler}
@@ -34,7 +34,7 @@ function App() {
         <SearchedMoviesList onSearchTerm={searchTerm} />
       )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

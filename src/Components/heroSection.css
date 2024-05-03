@@ -1,0 +1,18 @@
+.heroContainer {
+  min-height: 45svh;
+  padding: 1em 2em;
+  background-color: var(--secondary-font);
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3, minmax(min(100%, 250px), 1fr));
+}
+
+.titlespan {
+  font-size: 1.07em;
+}
+
+.title {
+  justify-self: start;
+  /* padding-inline: 1rem; */
+  font-size: 6em;
+}
