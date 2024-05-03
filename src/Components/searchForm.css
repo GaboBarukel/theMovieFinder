@@ -8,10 +8,8 @@
 }
 
 .title {
-  /* grid-column: span 2; */
-  /* margin-block: auto; */
-  align-self: center;
   justify-self: start;
+  padding-inline: 1rem;
   font-size: 6rem;
 }
 
