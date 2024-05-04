@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
 //TODO: Loading component
-import Loading from "./Loading";
+import Loading from "../../UI/Loading";
+import Button from "../../UI/Button";
 import MovieItem from "./MovieItem";
-import Button from "../UI/Button";
 
 const apiKey = import.meta.env.VITE_API_KEY;
 const searchURL = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=es-419`;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./popularCarousel.css";
 
 //TODO: Loading Component
-import Loading from "./Loading";
+import Loading from "../../UI/Loading";
 import CarouselItem from "./CarouselItem";
 
 const PopularCarousel = ({ popularMovies }) => {

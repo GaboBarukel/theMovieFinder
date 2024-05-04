@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import "./movieList.css";
+import "./List/movieList.css";
 
 //TODO: Loading Component
-import Loading from "./Loading";
-import MovieItem from "./MovieItem";
+import Loading from "../UI/Loading";
+import MovieItem from "./List/MovieItem";
 import Button from "../UI/Button";
 
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -32,10 +32,6 @@ const PopularMovieList = () => {
 
   return (
     <>
-      <div className="titleContainer">
-        <h2 className="sectionTitle">POPULAR</h2>
-        {/* <Button onClick={showAllHandler}>{buttonText}</Button> */}
-      </div>
       <div className="movieListContainer">
         {popularMovies ? (
           <ul className="list">

@@ -1,6 +1,7 @@
 .carousel-img-container {
   grid-column-start: 3;
   position: relative;
+  margin-block: 1em;
   display: flex;
   justify-self: center;
   width: 100%;
@@ -17,8 +18,8 @@
   background-image: linear-gradient(
     to left,
     var(--secondary-font),
-    transparent 22%,
-    transparent 78%,
+    transparent 15%,
+    transparent 85%,
     var(--secondary-font)
   );
   top: 0;

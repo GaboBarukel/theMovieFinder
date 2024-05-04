@@ -1,8 +1,9 @@
 import { useState } from "react";
 
+import SearchedMoviesList from "./Components/List/SearchedMovieList";
+import HeroSection from "./Components/Hero/HeroSection";
 import PopularMovieList from "./Components/PopularMovieList";
-import SearchedMoviesList from "./Components/SearchedMovieList";
-import HeroSection from "./Components/HeroSection";
+import SearchForm from "./Components/Search/SearchForm";
 //import './App.css'
 
 function App() {
@@ -28,11 +29,8 @@ function App() {
         onSearchPass={searchTermPass}
         onInput={onEmptyInputHandler}
       />
-      {showSearch ? (
-        <PopularMovieList />
-      ) : (
-        <SearchedMoviesList onSearchTerm={searchTerm} />
-      )}
+      <SearchForm />
+      <PopularMovieList />
     </>
   );
 }
