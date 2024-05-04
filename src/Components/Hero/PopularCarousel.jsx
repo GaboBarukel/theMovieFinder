@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./popularCarousel.css";
 
 //TODO: Loading Component
+import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import Loading from "../../UI/Loading";
 import CarouselItem from "./CarouselItem";
 
@@ -38,17 +39,7 @@ const PopularCarousel = ({ popularMovies }) => {
           imageIndex === 0 ? { display: "none" } : { display: "inline-block" }
         }
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="44"
-          height="44"
-          viewBox="0 0 24 24"
-          stroke="#2c3e50"
-          fill="none"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M11 17h6l-4 -5l4 -5h-6l-4 5z" />
-        </svg>
+        <MdArrowBackIosNew />
       </button>
       {popularMovies ? (
         popularMovies.map((movie) => (
@@ -66,17 +57,7 @@ const PopularCarousel = ({ popularMovies }) => {
             : { display: "inline-block" }
         }
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="44"
-          height="44"
-          viewBox="0 0 24 24"
-          stroke="#2c3e50"
-          fill="none"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M13 7h-6l4 5l-4 5h6l4 -5z" />
-        </svg>
+        <MdArrowForwardIos />
       </button>
     </div>
   );
