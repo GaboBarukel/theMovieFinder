@@ -17,14 +17,13 @@
   position: absolute;
   background-image: linear-gradient(
     to left,
-    var(--secondary-font),
-    transparent 15%,
-    transparent 85%,
-    var(--secondary-font)
+    var(--secondary-font) 1%,
+    transparent 8%,
+    transparent 92%,
+    var(--secondary-font) 99%
   );
   top: 0;
   left: 0;
-  /* border-radius: 0.4rem; */
 }
 
 .slider-btn {

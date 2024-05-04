@@ -1,20 +1,28 @@
-.titleContainer {
-  padding: 1em 1em;
-  display: grid;
-  align-items: center;
-  grid-template-columns: repeat(3, minmax(min(100%, 250px), 1fr));
+.searchBackGradient {
+  padding: 0.5em 2em;
+  height: 100%;
   background: linear-gradient(
-    45deg,
-    var(--main-bg-color) 0%,
-    var(--secondary-font) 70%
+    to bottom,
+    var(--secondary-font) 15%,
+    transparent 100%
   );
 }
 
-.sectionTitle {
+.searchContainer {
+  border-radius: 1em;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3, minmax(min(100%, 250px), 1fr));
+  background-color: var(--accent);
+}
+
+.searchIcon {
   grid-column-start: 3;
-  font-size: 1.5rem;
+  justify-self: end;
+  font-size: 2em;
   font-weight: 500;
-  text-align: end;
-  padding-inline: 1em;
-  margin-block: 0;
+}
+
+.searchIcon {
+  color: var(--main-font);
 }

@@ -1,5 +1,6 @@
 .heroContainer {
-  min-height: 45svh;
+  height: 100%;
+  width: 100%;
   padding: 1em 2em;
   background-color: var(--secondary-font);
   display: grid;
@@ -12,7 +13,7 @@
 }
 
 .title {
-  justify-self: start;
-  /* padding-inline: 1rem; */
+  text-align: center;
   font-size: 6em;
+  line-height: 0.8em;
 }
