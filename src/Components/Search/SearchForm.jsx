@@ -1,11 +1,11 @@
-import { IoSearchCircleSharp } from "react-icons/io5";
+import { IoSearchSharp } from "react-icons/io5";
 import "./searchForm.css";
 
 const SearchForm = () => {
   return (
     <div className="searchBackGradient">
       <div className="searchContainer">
-        <IoSearchCircleSharp className="searchIcon" />
+        <IoSearchSharp className="searchIcon" />
       </div>
     </div>
   );

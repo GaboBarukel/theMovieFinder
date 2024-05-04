@@ -1,25 +1,28 @@
 .searchBackGradient {
-  padding: 0.5em 2em;
-  height: 100%;
+  padding: 0.5em 3em;
+  height: 10vh;
   background: linear-gradient(
     to bottom,
-    var(--secondary-font) 15%,
-    transparent 100%
+    var(--secondary-font) 10%,
+    transparent 99%
   );
 }
 
 .searchContainer {
-  border-radius: 1em;
   display: grid;
+  height: 100%;
+  padding-inline: 0.5em;
   align-items: center;
   grid-template-columns: repeat(3, minmax(min(100%, 250px), 1fr));
-  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 0.5rem;
+  background-color: var(--secondary-bg);
 }
 
 .searchIcon {
   grid-column-start: 3;
   justify-self: end;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 500;
-  color: var(--main-bg-color);
+  color: var(--accent);
 }

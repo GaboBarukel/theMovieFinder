@@ -14,13 +14,13 @@
   width: 100%;
   height: 100%;
   border: 2px solid var(--accent);
-  border-radius: 0.5em;
+  border-radius: 0.5rem;
   transition: background-color 150ms ease-in-out;
 }
 
 /* TODO: underline animation on hover to title */
 .modeCard:hover {
-  background-color: var(--secondary-font);
+  background-color: var(--secondary-bg);
   /* & > p {
     text-decoration: underline 2px;
   } */
