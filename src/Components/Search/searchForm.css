@@ -21,8 +21,5 @@
   justify-self: end;
   font-size: 2em;
   font-weight: 500;
-}
-
-.searchIcon {
-  color: var(--main-font);
+  color: var(--main-bg-color);
 }

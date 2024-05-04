@@ -1,10 +1,8 @@
 import { useState } from "react";
 
-import SearchedMoviesList from "./Components/List/SearchedMovieList";
 import HeroSection from "./Components/Hero/HeroSection";
-import PopularMovieList from "./Components/PopularMovieList";
 import SearchForm from "./Components/Search/SearchForm";
-//import './App.css'
+import ModesContainer from "./Components/Modes/ModesContainer";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -30,7 +28,7 @@ function App() {
         onInput={onEmptyInputHandler}
       />
       <SearchForm />
-      <PopularMovieList />
+      <ModesContainer />
     </>
   );
 }
