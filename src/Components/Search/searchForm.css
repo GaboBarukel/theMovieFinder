@@ -1,5 +1,5 @@
 .searchBackGradient {
-  padding: 0.5em 3em;
+  padding: 0em 3em;
   height: 10vh;
   background: linear-gradient(
     to bottom,
@@ -9,20 +9,58 @@
 }
 
 .searchContainer {
-  display: grid;
-  height: 100%;
-  padding-inline: 0.5em;
+  display: flex;
   align-items: center;
-  grid-template-columns: repeat(3, minmax(min(100%, 250px), 1fr));
-  border: 1px solid var(--accent);
+  height: 100%;
+  position: relative;
+  padding-inline: 0.5em;
+  /* border: 1px solid var(--accent); */
   border-radius: 0.5rem;
   background-color: var(--secondary-bg);
 }
 
+.inputContainer {
+  position: absolute;
+  right: 0.5em;
+  padding: 0.2em 0.5em;
+  display: flex;
+  align-items: center;
+  height: 80%;
+  background-color: var(--main-bg-color);
+  border: 1px solid var(--accent);
+  border-radius: 0.5em;
+}
+
+.searchInput {
+  padding: 1em 1em;
+  width: 90%;
+  height: 80%;
+  color: var(--accent);
+  background-color: var(--secondary-font);
+  border-radius: 0.5em;
+  border: none;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.activeInputContainer {
+  justify-content: space-around;
+  width: 45%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
 .searchIcon {
-  grid-column-start: 3;
-  justify-self: end;
   font-size: 1.5em;
   font-weight: 500;
   color: var(--accent);
+}
+
+.searchIcon:hover {
+  cursor: pointer;
 }
