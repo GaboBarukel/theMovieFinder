@@ -6,6 +6,7 @@ const CarouselItem = ({ movie, index }) => {
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
         className="carouselImg"
+        alt={movie.title}
       />
       <span className="carouselMovieTitle">{movie.title}</span>
     </div>

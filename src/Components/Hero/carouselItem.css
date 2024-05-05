@@ -1,7 +1,7 @@
 .itemContainer {
   display: flex;
   justify-content: center;
-  max-height: 220px;
+  /* max-height: 220px; */
   width: 100%;
   padding-inline: 1em;
   /* margin-block: 1em; */
@@ -10,7 +10,7 @@
   position: relative;
 }
 
-img {
+.carouselImg {
   aspect-ratio: 16/9;
   display: block;
   object-fit: cover;
