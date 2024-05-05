@@ -1,11 +1,12 @@
 .heroContainer {
   height: 45vh;
   width: 100%;
-  padding: 1em 2em;
-  background-color: var(--secondary-font);
   display: grid;
   align-items: center;
   grid-template-columns: repeat(3, minmax(min(100%, 250px), 1fr));
+  gap: 1em;
+  padding: 1em 3em;
+  background-color: var(--secondary-font);
 }
 
 .titlespan {
@@ -13,7 +14,7 @@
 }
 
 .title {
-  text-align: center;
+  text-align: start;
   font-size: 6em;
   line-height: 0.8em;
 }
