@@ -14,7 +14,7 @@ const ModeCard = ({ title }) => {
   return (
     <div
       className={
-        expandCard ? classesExpand : (classesExpand += " expandedCard")
+        !expandCard ? classesExpand : (classesExpand += " expandedCard")
       }
       onClick={indivudualClickHandler}
     >
