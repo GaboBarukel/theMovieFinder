@@ -6,7 +6,7 @@
   background-color: var(--main-bg-color);
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(3, minmax(min(100%, 250px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10%), 1fr));
 }
 
 .modeCard {
@@ -18,12 +18,13 @@
   transition: background-color 150ms ease-in-out;
 }
 
+.expandedCard {
+  grid-column: span 4;
+}
+
 /* TODO: underline animation on hover to title */
 .modeCard:hover {
   background-color: var(--secondary-bg);
-  /* & > p {
-    text-decoration: underline 2px;
-  } */
   cursor: pointer;
 }
 

@@ -4,7 +4,7 @@ import "./modesContainer.css";
 //TODO: Loading Component
 import Loading from "../../../UI/Loading";
 import MovieItem from "../../List/MovieItem";
-import Button from "../../../UI/Button";
+import ModeCard from "./ModeCard";
 
 const apiKey = import.meta.env.VITE_API_KEY;
 const URL = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=es-419&`;
@@ -27,27 +27,19 @@ const ModesContainer = ({ onSearchTerm }) => {
   }
 
   return (
-    <>
-      <div className="modesListContainer">
-        {showMode ? (
-          <>
-            <div className="modeCard">
-              <p className="modeTitle">SEARCH</p>
-            </div>
-            <div className="modeCard">
-              <p className="modeTitle">DISCOVER</p>
-            </div>
-            <div className="modeCard">
-              <p className="modeTitle">STREAM</p>
-            </div>
-          </>
-        ) : (
-          searchedMovies.map((movie) => (
-            <MovieItem movieData={movie} key={movie.id} />
-          ))
-        )}
-      </div>
-    </>
+    <div className="modesListContainer">
+      {showMode ? (
+        <>
+          <ModeCard title="SEARCH" />
+          <ModeCard title="DISCOVER" />
+          <ModeCard title="STREAM" />
+        </>
+      ) : (
+        searchedMovies.map((movie) => (
+          <MovieItem movieData={movie} key={movie.id} />
+        ))
+      )}
+    </div>
   );
 };
 
