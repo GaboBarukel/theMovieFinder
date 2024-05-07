@@ -1,22 +1,16 @@
-import { useState } from "react";
-
-const ModeCard = ({ title }) => {
-  const [expandCard, setExpandCard] = useState(false);
+const ModeCard = ({ title, expandBoolean, onExpandMode }) => {
   let classesExpand = "modeCard";
 
-  const indivudualClickHandler = (e) => {
-    setExpandCard((prevExp) => !prevExp);
-    console.log(expandCard);
+  const updateExpand = () => {
+    onExpandMode(title);
   };
-
-  //TODO: you shouldn´t be abble to grow another card when one already is
 
   return (
     <div
       className={
-        !expandCard ? classesExpand : (classesExpand += " expandedCard")
+        !expandBoolean ? classesExpand : (classesExpand += " expandedCard")
       }
-      onClick={indivudualClickHandler}
+      onClick={updateExpand}
     >
       <p className="modeTitle">{title}</p>
     </div>
