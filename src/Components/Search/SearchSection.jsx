@@ -5,19 +5,14 @@ import SearchForm from "./Form/SearchForm";
 
 const SearchSection = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [showSearch, setShowSearch] = useState(true);
 
   const searchTermPass = (search) => {
     setSearchTerm(search);
   };
 
-  const onEmptyInputHandler = () => {
-    setShowSearch(true);
-  };
-
   return (
     <>
-      <SearchForm onSearchPass={searchTermPass} onInput={onEmptyInputHandler} />
+      <SearchForm onSearchPass={searchTermPass} />
       <ModesContainer onSearchTerm={searchTerm} />
     </>
   );

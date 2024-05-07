@@ -8,6 +8,7 @@ const SearchForm = ({ onSearchPass }) => {
 
   function showInputHandler() {
     setActiveInput(() => !activeInput);
+    activeInput && onSearchPass("");
   }
 
   const searchHandler = (e) => {
