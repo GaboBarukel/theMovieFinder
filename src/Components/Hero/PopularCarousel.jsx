@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./popularCarousel.css";
 
 //TODO: Loading Component
@@ -8,6 +8,17 @@ import CarouselItem from "./CarouselItem";
 
 const PopularCarousel = ({ popularMovies }) => {
   const [imageIndex, setImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if(imageIndex === 9){
+          setImageIndex(0)
+      }else{
+        setImageIndex(imageIndex + 1)
+      }
+    }, 3000)
+    return () => clearTimeout(timer)
+  },[imageIndex])
 
   function showPrevImage() {
     setImageIndex((index) => {
