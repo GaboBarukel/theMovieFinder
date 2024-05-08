@@ -1,23 +1,22 @@
 import { useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
-
-import "./searchForm.css";
 import { useSearchContext } from "../../../Hooks/useSearchcontext";
 
-const SearchForm = ({ onSearchPass }) => {
+import "./searchForm.css";
+
+const SearchForm = () => {
   const [activeInput, setActiveInput] = useState(false);
-  const {searchGeneralMode} = useSearchContext()
+  const {searchGeneralMode, searchQueryTerm} = useSearchContext()
 
   function showInputHandler() {
     setActiveInput(() => !activeInput);
-    activeInput && onSearchPass("");
     searchGeneralMode();
   }
 
   const searchHandler = (e) => {
     e.preventDefault();
     const searchTerm = e.target[0].value;
-    onSearchPass(searchTerm);
+    searchQueryTerm(searchTerm);
   };
 
   return (

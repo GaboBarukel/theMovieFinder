@@ -8,13 +8,18 @@ export function SearchContextProvider({children}){
     
     const searchGeneralMode = () => {
         setSearch((prevSearch) => !prevSearch )
-        console.log(search)
+    }
+
+    const searchQueryTerm = (queryTerm) => {
+        setSearchTerm(queryTerm);
     }
 
     return(
         <SearchContext.Provider value={{
             search,
-            searchGeneralMode
+            searchGeneralMode,
+            searchTerm,
+            searchQueryTerm
         }}>
             {children}
         </SearchContext.Provider>
