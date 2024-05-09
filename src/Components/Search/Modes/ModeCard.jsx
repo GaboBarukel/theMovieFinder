@@ -1,4 +1,8 @@
-const ModeCard = ({ title, expandBoolean, onExpandMode }) => {
+import { useSearchContext } from "../../../Hooks/useSearchcontext";
+
+
+const ModeCard = ({ title, expandBoolean }) => {
+  const {onExpandMode} = useSearchContext()
   let classesExpand = "modeCard";
 
   const updateExpand = () => {
