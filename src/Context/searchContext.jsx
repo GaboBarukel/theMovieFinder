@@ -3,23 +3,35 @@ import { useState, createContext } from "react";
 export const SearchContext = createContext()
 
 export function SearchContextProvider({children}){
-    const [search, setSearch] = useState(false)
+    const [searchGeneral, setSearch] = useState(false)
     const [searchTerm, setSearchTerm] = useState("");
+    const [selectedExpand, setSelectedExpand] = useState(null);
+
     
-    const searchGeneralMode = () => {
+    const onSearchGeneralMode = () => {
         setSearch((prevSearch) => !prevSearch )
     }
 
-    const searchQueryTerm = (queryTerm) => {
+    const onSearchQueryTerm = (queryTerm) => {
         setSearchTerm(queryTerm);
+    }
+
+    const onExpandMode = (title) => {
+        if (selectedExpand === title) {
+            setSelectedExpand(null);
+          } else {
+            setSelectedExpand(title);
+          }
     }
 
     return(
         <SearchContext.Provider value={{
-            search,
-            searchGeneralMode,
+            searchGeneral,
+            onSearchGeneralMode,
             searchTerm,
-            searchQueryTerm
+            onSearchQueryTerm,
+            selectedExpand,
+            onExpandMode
         }}>
             {children}
         </SearchContext.Provider>

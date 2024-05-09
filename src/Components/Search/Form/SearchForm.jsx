@@ -1,22 +1,19 @@
-import { useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 import { useSearchContext } from "../../../Hooks/useSearchcontext";
 
 import "./searchForm.css";
 
 const SearchForm = () => {
-  const [activeInput, setActiveInput] = useState(false);
-  const {searchGeneralMode, searchQueryTerm} = useSearchContext()
+  const {onSearchGeneralMode, onSearchQueryTerm , searchGeneral} = useSearchContext()
 
   function showInputHandler() {
-    setActiveInput(() => !activeInput);
-    searchGeneralMode();
+    onSearchGeneralMode();
   }
 
   const searchHandler = (e) => {
     e.preventDefault();
     const searchTerm = e.target[0].value;
-    searchQueryTerm(searchTerm);
+    onSearchQueryTerm(searchTerm);
   };
 
   return (
@@ -24,13 +21,13 @@ const SearchForm = () => {
       <div className="searchContainer">
         <form
           className={
-            !activeInput
+            !searchGeneral
               ? "inputContainer"
               : "inputContainer activeInputContainer"
           }
           onSubmit={searchHandler}
         >
-          {activeInput && <input className="searchInput" autoFocus />}
+          {searchGeneral && <input className="searchInput" autoFocus />}
           <IoSearchSharp className="searchIcon" onClick={showInputHandler} />
         </form>
       </div>

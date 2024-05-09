@@ -14,8 +14,7 @@ let Modes = [{ title: "SEARCH" }, { title: "DISCOVER" }, { title: "STREAM" }];
 
 const ModesContainer = () => {
   const [searchedMovies, setSearchedMovies] = useState(null);
-  const [selectedExpand, setSelectedExpand] = useState(null);
-  const {searchTerm, search} = useSearchContext()
+  const {searchTerm, searchGeneral, selectedExpand} = useSearchContext()
 
   useEffect(() => {
     const queryURL = URL + `query=${searchTerm}&page=1&include_adult=false`;
@@ -24,23 +23,14 @@ const ModesContainer = () => {
       .then((data) => setSearchedMovies(data.results.slice(0, 3)));
   }, [searchTerm]);
 
-  const onExpandMode = (title) => {
-    if (selectedExpand === title) {
-      setSelectedExpand(null);
-    } else {
-      setSelectedExpand(title);
-    }
-  };
-
   return (
     <div className="modesListContainer">
-      {!search
+      {!searchGeneral
         ? Modes.map((mode) => (
             <ModeCard
               title={mode.title}
               key={mode.title}
-              expandBoolean={selectedExpand === mode.title ? true : false}
-              onExpandMode={onExpandMode}
+              expandBoolean={selectedExpand === mode.title ? true : false}              
             />
           ))
         : searchedMovies?.map((movie) => (
