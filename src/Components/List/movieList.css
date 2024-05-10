@@ -1,7 +1,7 @@
-.itemContainer {
+.modeItemContainer {
   display: flex;
   justify-content: center;
-  /* max-height: 220px; */
+  max-height: 160px;
   width: 100%;
   padding-inline: 1em;
   /* margin-block: 1em; */
@@ -10,10 +10,10 @@
   position: relative;
 }
 
-.poster {
+.modePoster {
   aspect-ratio: 16/9;
   /* display: block; */
   object-fit: cover;
-  max-height: 220px;
+  max-height: 140px;
   border-radius: 0.5rem;
 }
