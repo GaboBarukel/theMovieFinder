@@ -20,6 +20,7 @@ const ModeCard = ({ title }) => {
 
   const updateExpand = () => {
     onExpandMode(title);
+    setSearchedMovies(null);
   };
 
   return (
