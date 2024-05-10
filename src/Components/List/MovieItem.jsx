@@ -6,7 +6,7 @@ const MovieItem = ({ movieData }) => {
   return (
     <div className="modeItemContainer">
       <img src={imgSRC} className="modePoster" alt={movieData.title} />
-      <span className="carouselMovieTitle">{movieData.title}</span>
+      <span className="modeMovieTitle">{movieData.title}</span>
     </div>
   );
 };

@@ -4,7 +4,6 @@
   max-height: 160px;
   width: 100%;
   user-select: none;
-  position: relative;
 }
 
 .modePoster {
@@ -13,4 +12,13 @@
   object-fit: cover;
   max-height: 140px;
   border-radius: 0.5rem;
+}
+
+.modeMovieTitle {
+  position: absolute;
+  text-align: center;
+  max-width: 30%;
+  min-height: 15%;
+  bottom: 0.5em;
+  color: var(--accent);
 }
