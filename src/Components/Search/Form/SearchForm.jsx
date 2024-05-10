@@ -13,7 +13,7 @@ const SearchForm = () => {
 
   function showInputHandler() {
     onSearchGeneralMode();
-    searchGeneral && onExpandMode("");
+    searchGeneral && onExpandMode(null);
   }
 
   const searchHandler = (e) => {

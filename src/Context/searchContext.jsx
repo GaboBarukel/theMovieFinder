@@ -18,8 +18,10 @@ export function SearchContextProvider({ children }) {
   const onExpandMode = (title) => {
     if (selectedExpand === title) {
       setSelectedExpand(null);
+      setSearchTerm("");
     } else {
       setSelectedExpand(title);
+      setSearchTerm("");
     }
   };
 
