@@ -22,6 +22,7 @@ const SearchForm = () => {
     e.preventDefault();
     let input = document.getElementById("searchInput");
     const searchTerm = input.value;
+    searchTerm !== "" && !selectedExpand && onExpandMode("SEARCH");
     onSearchQueryTerm(searchTerm);
     input.focus();
   };

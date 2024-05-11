@@ -22,6 +22,7 @@ export function SearchContextProvider({ children }) {
     } else {
       setSelectedExpand(title);
       setSearchTerm("");
+      !searchGeneral && setSearch(true);
     }
   };
 

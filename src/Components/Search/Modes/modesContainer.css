@@ -42,3 +42,9 @@
   top: 1rem;
   left: 2rem;
 }
+
+.modeExplanation {
+  text-align: center;
+  margin-inline: 3em;
+  color: var(--accent);
+}
