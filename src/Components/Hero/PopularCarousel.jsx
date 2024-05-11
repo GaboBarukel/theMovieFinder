@@ -8,17 +8,24 @@ import CarouselItem from "./CarouselItem";
 
 const PopularCarousel = ({ popularMovies }) => {
   const [imageIndex, setImageIndex] = useState(0);
+  const [onHover, setOnHover] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if(imageIndex === 9){
-          setImageIndex(0)
-      }else{
-        setImageIndex(imageIndex + 1)
-      }
-    }, 3000)
-    return () => clearTimeout(timer)
-  },[imageIndex])
+    if (!onHover) {
+      const timer = setTimeout(() => {
+        if (imageIndex === 9) {
+          setImageIndex(0);
+        } else {
+          setImageIndex(imageIndex + 1);
+        }
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [imageIndex, onHover]);
+
+  const onHoverCarouselHandler = () => {
+    setOnHover((prevHov) => !prevHov);
+  };
 
   function showPrevImage() {
     setImageIndex((index) => {
@@ -41,7 +48,11 @@ const PopularCarousel = ({ popularMovies }) => {
   }
 
   return (
-    <div className="carousel-img-container">
+    <div
+      className="carousel-img-container"
+      onMouseEnter={onHoverCarouselHandler}
+      onMouseLeave={onHoverCarouselHandler}
+    >
       <div className="carousel-gradient"></div>
       <button
         onClick={showPrevImage}
