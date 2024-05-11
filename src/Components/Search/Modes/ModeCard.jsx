@@ -34,9 +34,12 @@ const ModeCard = ({ title }) => {
     >
       {searchGeneral &&
         selectedExpand === title &&
-        searchedMovies?.map((movie) => (
-          <MovieItem movieData={movie} key={movie.id} />
-        ))}
+        searchedMovies?.map(
+          (movie) =>
+            movie.backdrop_path && (
+              <MovieItem movieData={movie} key={movie.id} />
+            )
+        )}
       <h3
         className={
           selectedExpand === title ? "modeTitle onSearchModeTitle" : "modeTitle"
