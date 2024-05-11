@@ -20,6 +20,7 @@ const ModeCard = ({ title }) => {
 
   const updateExpand = () => {
     onExpandMode(title);
+    searchGeneral && document.getElementById("searchInput").focus();
   };
 
   return (
@@ -36,15 +37,13 @@ const ModeCard = ({ title }) => {
         searchedMovies?.map((movie) => (
           <MovieItem movieData={movie} key={movie.id} />
         ))}
-      <p
+      <h3
         className={
-          searchGeneral && selectedExpand === title
-            ? "modeTitle onSearchModeTitle"
-            : "modeTitle"
+          selectedExpand === title ? "modeTitle onSearchModeTitle" : "modeTitle"
         }
       >
         {title}
-      </p>
+      </h3>
     </div>
   );
 };

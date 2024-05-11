@@ -14,7 +14,6 @@
   height: 100%;
   position: relative;
   padding-inline: 0.5em;
-  /* border: 1px solid var(--accent); */
   border-radius: 0.5rem;
   background-color: var(--secondary-bg);
 }
@@ -61,6 +60,15 @@
   color: var(--accent);
 }
 
-.searchIcon:hover {
+.searchIcon:hover,
+.closeIcon {
   cursor: pointer;
+}
+
+.closeIcon {
+  font-size: 1.25em;
+  font-weight: 500;
+  color: var(--main-bg-color);
+  position: absolute;
+  right: -1.25em;
 }
