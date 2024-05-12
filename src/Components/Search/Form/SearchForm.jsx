@@ -15,7 +15,7 @@ const SearchForm = () => {
   const showInputHandler = () => {
     onSearchGeneralMode();
     searchGeneral && onExpandMode(null);
-    !selectedExpand && onExpandMode("SEARCH");
+    !selectedExpand && !searchGeneral && onExpandMode("SEARCH");
   };
 
   const searchHandler = (e) => {

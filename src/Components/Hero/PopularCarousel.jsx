@@ -10,10 +10,15 @@ const PopularCarousel = ({ popularMovies }) => {
   const [imageIndex, setImageIndex] = useState(0);
   const [onHover, setOnHover] = useState(false);
 
+  let gotBackdrop = [];
+  popularMovies?.map((movie) => {
+    movie.backdrop_path && gotBackdrop.push(movie);
+  });
+
   useEffect(() => {
     if (!onHover) {
       const timer = setTimeout(() => {
-        if (imageIndex === 9) {
+        if (imageIndex === gotBackdrop.length - 1) {
           setImageIndex(0);
         } else {
           setImageIndex(imageIndex + 1);
@@ -39,8 +44,8 @@ const PopularCarousel = ({ popularMovies }) => {
 
   function showNextImage() {
     setImageIndex((index) => {
-      if (index === popularMovies.length - 1) {
-        return popularMovies.length - 1;
+      if (index === gotBackdrop.length - 1) {
+        return gotBackdrop.length - 1;
       } else {
         return index + 1;
       }
@@ -63,10 +68,13 @@ const PopularCarousel = ({ popularMovies }) => {
       >
         <MdArrowBackIosNew />
       </button>
-      {popularMovies ? (
-        popularMovies.map((movie) => (
-          <CarouselItem key={movie.id} movie={movie} index={imageIndex} />
-        ))
+      {gotBackdrop ? (
+        gotBackdrop.map(
+          (movie) =>
+            movie.backdrop_path && (
+              <CarouselItem key={movie.id} movie={movie} index={imageIndex} />
+            )
+        )
       ) : (
         <Loading />
       )}
@@ -74,7 +82,7 @@ const PopularCarousel = ({ popularMovies }) => {
         onClick={showNextImage}
         className="slider-btn right-btn"
         style={
-          imageIndex === popularMovies?.length - 1
+          imageIndex === gotBackdrop?.length - 1
             ? { display: "none" }
             : { display: "inline-block" }
         }
