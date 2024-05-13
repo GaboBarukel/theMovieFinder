@@ -1,24 +1,18 @@
-import { useState, useEffect } from "react";
 import { useSearchContext } from "../../../Hooks/useSearchcontext";
 import MovieItem from "../../List/MovieItem";
 
-const apiKey = import.meta.env.VITE_API_KEY;
-const URL = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=es-419&`;
-
-const ModeCard = ({ title }) => {
-  const [searchedMovies, setSearchedMovies] = useState(null);
-  const { onExpandMode, searchTerm, searchGeneral, selectedExpand } =
-    useSearchContext();
+const ModeCard = ({ title, searchedMovies }) => {
+  const {
+    onExpandMode,
+    searchTerm,
+    searchGeneral,
+    selectedExpand,
+    onSearchQueryTerm,
+  } = useSearchContext();
   let classesExpand = "modeCard";
 
-  useEffect(() => {
-    const queryURL = URL + `query=${searchTerm}&page=1&include_adult=false`;
-    fetch(queryURL)
-      .then((res) => res.json())
-      .then((data) => setSearchedMovies(data.results.slice(0, 3)));
-  }, [searchTerm]);
-
   const updateExpand = () => {
+    onSearchQueryTerm("");
     onExpandMode(title);
     searchGeneral && document.getElementById("searchInput").focus();
   };

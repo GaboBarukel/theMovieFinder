@@ -4,6 +4,7 @@ export const SearchContext = createContext();
 
 export function SearchContextProvider({ children }) {
   const [searchGeneral, setSearch] = useState(false);
+  const [searchedMovies, setSearchedMovies] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedExpand, setSelectedExpand] = useState(null);
 
@@ -17,12 +18,11 @@ export function SearchContextProvider({ children }) {
 
   const onExpandMode = (title) => {
     if (selectedExpand === title) {
+      setSearchedMovies(null);
       setSelectedExpand(null);
-      setSearchTerm("");
     } else {
+      setSearchedMovies(null);
       setSelectedExpand(title);
-      setSearchTerm("");
-      !searchGeneral && setSearch(true);
     }
   };
 
@@ -35,6 +35,8 @@ export function SearchContextProvider({ children }) {
         onSearchQueryTerm,
         selectedExpand,
         onExpandMode,
+        searchedMovies,
+        setSearchedMovies,
       }}
     >
       {children}
