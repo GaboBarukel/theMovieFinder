@@ -3,7 +3,7 @@
   justify-content: center;
   width: 100%;
   padding: 1em;
-  transition: translate 500ms ease-in-out;
+  transition: translate 800ms ease-in-out;
   user-select: none;
   position: relative;
 }

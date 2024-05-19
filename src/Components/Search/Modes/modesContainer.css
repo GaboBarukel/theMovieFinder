@@ -12,7 +12,7 @@
 
 .modeCard {
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   border: 2px solid var(--accent);
   border-radius: 0.5rem;

@@ -9,6 +9,7 @@ export function SearchContextProvider({ children }) {
   const [selectedExpand, setSelectedExpand] = useState(null);
 
   const onSearchGeneralMode = () => {
+    searchGeneral && setSearchTerm("");
     setSearch((prevSearch) => !prevSearch);
   };
 

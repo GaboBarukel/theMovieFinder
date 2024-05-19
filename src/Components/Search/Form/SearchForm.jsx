@@ -40,16 +40,22 @@ const SearchForm = () => {
           onSubmit={searchHandler}
         >
           {searchGeneral && (
-            <input className="searchInput" id="searchInput" autoFocus />
+            <input
+              className={
+                !searchGeneral ? "searchInput" : "searchInput activeSearchInput"
+              }
+              id="searchInput"
+              autoFocus
+            />
           )}
           <IoSearchSharp
             className="searchIcon"
             onClick={!searchGeneral ? showInputHandler : searchHandler}
           />
-          {searchGeneral && (
-            <IoCloseSharp className="closeIcon" onClick={showInputHandler} />
-          )}
         </form>
+        {searchGeneral && (
+          <IoCloseSharp className="closeIcon" onClick={showInputHandler} />
+        )}
       </div>
     </div>
   );

@@ -8,7 +8,9 @@ const CarouselItem = ({ movie, index }) => {
         className="carouselImg"
         alt={movie.title}
       />
-      <span className="carouselMovieTitle">{movie.title}</span>
+      <span className="carouselMovieTitle">
+        {movie.title ? movie.title : movie.name}
+      </span>
     </div>
   );
 };

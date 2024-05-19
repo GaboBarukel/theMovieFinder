@@ -23,7 +23,7 @@ const PopularCarousel = ({ popularMovies }) => {
         } else {
           setImageIndex(imageIndex + 1);
         }
-      }, 3000);
+      }, 5000);
       return () => clearTimeout(timer);
     }
   }, [imageIndex, onHover]);
