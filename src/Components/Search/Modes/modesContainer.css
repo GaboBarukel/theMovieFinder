@@ -1,5 +1,5 @@
 .modesListContainer {
-  height: 45vh;
+  height: 50vh;
   width: 100%;
   padding: 1em 3em;
   gap: 1em;
@@ -26,7 +26,7 @@
 }
 
 /* TODO: underline animation on hover to title */
-.modeCard:hover {
+.modeCard:not(.expandedCard):hover {
   background-color: var(--secondary-bg);
   cursor: pointer;
 }

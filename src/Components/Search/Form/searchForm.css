@@ -11,7 +11,7 @@
 .searchContainer {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
   height: 100%;
   padding-inline: 0.5em;
   border-radius: 0.5rem;
@@ -19,11 +19,11 @@
 }
 
 .inputContainer {
-  width: 4%;
+  width: 85%;
   padding: 0.2em 0.5em;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-around;
   height: 80%;
   background-color: var(--main-bg-color);
   border: 1px solid var(--accent);
@@ -31,17 +31,10 @@
   transition: width 1000ms ease-in-out, margin-right 1000ms ease-in-out;
 }
 
-.activeInputContainer {
-  justify-content: space-around;
-  width: 45%;
-  margin-right: 25%;
-}
-
 .searchInput {
   padding: 1em 1em;
-  display: none;
-  width: 0;
-  height: 0;
+  width: 90%;
+  height: 80%;
   color: var(--accent);
   background-color: var(--secondary-font);
   border-radius: 0.5em;
@@ -49,12 +42,6 @@
   font-size: 1em;
   font-weight: 600;
   transition: all 1000ms ease-in-out;
-}
-
-.activeSearchInput {
-  display: block;
-  width: 90%;
-  height: 80%;
 }
 
 .searchInput:focus {
@@ -67,18 +54,6 @@
   color: var(--accent);
 }
 
-.searchIcon:hover,
-.closeIcon {
+.searchIcon:hover {
   cursor: pointer;
-}
-
-.closeIcon {
-  /* opacity: 0; */
-  font-size: 1.25em;
-  font-weight: 500;
-  color: var(--main-bg-color);
-}
-
-.activeCloseIcon {
-  opacity: 1;
 }

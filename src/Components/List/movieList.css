@@ -8,10 +8,15 @@
 
 .modePoster {
   aspect-ratio: 16/9;
-  /* display: block; */
   object-fit: cover;
   max-height: 140px;
   border-radius: 0.5rem;
+  transition: scale 300ms ease-in-out;
+}
+
+.modePoster:hover {
+  cursor: pointer;
+  scale: 1.05;
 }
 
 .modeMovieTitle {

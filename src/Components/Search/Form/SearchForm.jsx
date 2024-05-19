@@ -1,4 +1,4 @@
-import { IoSearchSharp, IoCloseSharp } from "react-icons/io5";
+import { IoSearchSharp } from "react-icons/io5";
 import { useSearchContext } from "../../../Hooks/useSearchcontext";
 
 import "./searchForm.css";
@@ -12,14 +12,15 @@ const SearchForm = () => {
     selectedExpand,
   } = useSearchContext();
 
-  const showInputHandler = () => {
-    onSearchGeneralMode();
-    searchGeneral && onExpandMode(null);
-    !selectedExpand && !searchGeneral && onExpandMode("MOVIES");
-  };
+  // const showInputHandler = () => {
+  //   onSearchGeneralMode();
+  //   searchGeneral && onExpandMode(null);
+  //   !selectedExpand && !searchGeneral && onExpandMode("MOVIES");
+  // };
 
   const searchHandler = (e) => {
     e.preventDefault();
+    !searchGeneral && onSearchGeneralMode();
     let input = document.getElementById("searchInput");
     const searchTerm = input.value;
     searchTerm !== "" && !selectedExpand && onExpandMode("MOVIES");
@@ -31,31 +32,13 @@ const SearchForm = () => {
     <div className="searchBackGradient">
       <div className="searchContainer">
         <form
-          className={
-            !searchGeneral
-              ? "inputContainer"
-              : "inputContainer activeInputContainer"
-          }
+          className="inputContainer"
           id="searchForm"
           onSubmit={searchHandler}
         >
-          {searchGeneral && (
-            <input
-              className={
-                !searchGeneral ? "searchInput" : "searchInput activeSearchInput"
-              }
-              id="searchInput"
-              autoFocus
-            />
-          )}
-          <IoSearchSharp
-            className="searchIcon"
-            onClick={!searchGeneral ? showInputHandler : searchHandler}
-          />
+          <input className="searchInput" id="searchInput" autoFocus />
+          <IoSearchSharp className="searchIcon" onClick={searchHandler} />
         </form>
-        {searchGeneral && (
-          <IoCloseSharp className="closeIcon" onClick={showInputHandler} />
-        )}
       </div>
     </div>
   );
