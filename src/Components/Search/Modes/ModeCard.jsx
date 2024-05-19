@@ -30,7 +30,7 @@ const ModeCard = ({ title, searchedMovies }) => {
         selectedExpand === title &&
         searchedMovies?.map(
           (movie) =>
-            movie.backdrop_path && (
+            (movie.backdrop_path || movie.profile_path) && (
               <MovieItem movieData={movie} key={movie.id} />
             )
         )}

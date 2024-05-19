@@ -15,14 +15,14 @@ const SearchForm = () => {
   const showInputHandler = () => {
     onSearchGeneralMode();
     searchGeneral && onExpandMode(null);
-    !selectedExpand && !searchGeneral && onExpandMode("SEARCH");
+    !selectedExpand && !searchGeneral && onExpandMode("MOVIES");
   };
 
   const searchHandler = (e) => {
     e.preventDefault();
     let input = document.getElementById("searchInput");
     const searchTerm = input.value;
-    searchTerm !== "" && !selectedExpand && onExpandMode("SEARCH");
+    searchTerm !== "" && !selectedExpand && onExpandMode("MOVIES");
     onSearchQueryTerm(searchTerm);
     input.focus();
   };

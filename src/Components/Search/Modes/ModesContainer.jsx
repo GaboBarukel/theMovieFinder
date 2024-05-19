@@ -4,17 +4,14 @@ import { useSearchContext } from "../../../Hooks/useSearchcontext";
 import "./modesContainer.css";
 import ModeCard from "./ModeCard";
 
-let Modes = [{ title: "SEARCH" }, { title: "DISCOVER" }, { title: "STREAM" }];
-
-const apiKey = import.meta.env.VITE_API_KEY;
-const URL = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=es-419&`;
+let Modes = [{ title: "MOVIES" }, { title: "TV" }, { title: "PEOPLE" }];
 
 const ModesContainer = () => {
-  const { searchTerm, searchGeneral, setSearchedMovies, searchedMovies } =
+  const { searchTerm, setSearchedMovies, searchedMovies, searchURL } =
     useSearchContext();
 
   useEffect(() => {
-    const queryURL = URL + `query=${searchTerm}&page=1&include_adult=false`;
+    let queryURL = searchURL + `query=${searchTerm}&page=1&include_adult=false`;
     fetch(queryURL)
       .then((res) => res.json())
       .then((data) => setSearchedMovies(data.results.slice(0, 3)));
