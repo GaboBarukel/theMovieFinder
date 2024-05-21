@@ -41,14 +41,14 @@ const ModeCard = ({ title, searchedMovies }) => {
       >
         {title}
       </h3>
-      {selectedExpand === title && searchTerm === "" && (
+      {/* {selectedExpand === title && searchTerm === "" && (
         <p className="modeExplanation">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus optio
           exercitationem, voluptatem repellat eum officiis reiciendis odio
           quidem doloribus porro! Nemo corrupti autem blanditiis unde ipsa
           itaque tempora commodi pariatur?
         </p>
-      )}
+      )} */}
     </div>
   );
 };

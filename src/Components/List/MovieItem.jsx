@@ -8,8 +8,6 @@ const MovieItem = ({ movieData }) => {
     imgSRC += movieData.profile_path;
   }
 
-  console.log(movieData);
-
   return (
     <div className="modeItemContainer">
       <img

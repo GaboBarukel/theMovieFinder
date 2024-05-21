@@ -1,3 +1,4 @@
+import { PiTelevisionLight, PiFilmStripLight } from "react-icons/pi";
 import "./carouselItem.css";
 
 const CarouselItem = ({ movie, index }) => {
@@ -8,6 +9,13 @@ const CarouselItem = ({ movie, index }) => {
         className="carouselImg"
         alt={movie.title}
       />
+      <span className="carouselMovieIcon">
+        {movie.media_type === "movie" ? (
+          <PiFilmStripLight />
+        ) : (
+          <PiTelevisionLight />
+        )}
+      </span>
       <span className="carouselMovieTitle">
         {movie.title ? movie.title : movie.name}
       </span>
