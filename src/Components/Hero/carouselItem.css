@@ -19,9 +19,6 @@
 .carouselImg:hover {
   cursor: pointer;
   scale: 1.03;
-  &.carouselMovieIcon {
-    opacity: 1;
-  }
 }
 
 .carouselMovieTitle {
@@ -29,14 +26,17 @@
   text-align: center;
   max-width: 80%;
   max-height: 20%;
+  border-radius: 0.5rem;
   bottom: 0.5em;
   padding: 0.3em;
 }
 
 .carouselMovieIcon {
-  opacity: 0;
-  right: 2em;
+  display: flex;
+  top: 1.25em;
+  right: 2.5em;
   padding: 0.2em;
+  border-radius: 50%;
   transition: opacity 300ms ease-in-out;
 }
 
@@ -44,8 +44,7 @@
 .carouselMovieIcon {
   font-weight: 100;
   position: absolute;
-  border-radius: 0.5rem;
-  border: 1px solid var(--accent);
+  border: 1px solid var(--secondary-bg);
   background-color: var(--main-bg-color);
   color: var(--accent);
 }
