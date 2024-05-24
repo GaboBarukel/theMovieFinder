@@ -14,7 +14,7 @@ const ModeCard = ({ title, searchedMovies }) => {
   const updateExpand = () => {
     onSearchQueryTerm("");
     onExpandMode(title);
-    searchGeneral && document.getElementById("searchInput").focus();
+    document.getElementById("searchInput").focus();
   };
 
   return (
@@ -26,8 +26,7 @@ const ModeCard = ({ title, searchedMovies }) => {
       }
       onClick={updateExpand}
     >
-      {searchGeneral &&
-        selectedExpand === title &&
+      {selectedExpand === title &&
         searchedMovies?.map(
           (movie) =>
             (movie.backdrop_path || movie.profile_path) && (

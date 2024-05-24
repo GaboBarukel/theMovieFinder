@@ -4,23 +4,11 @@ import { useSearchContext } from "../../../Hooks/useSearchcontext";
 import "./searchForm.css";
 
 const SearchForm = () => {
-  const {
-    onSearchGeneralMode,
-    onSearchQueryTerm,
-    searchGeneral,
-    onExpandMode,
-    selectedExpand,
-  } = useSearchContext();
-
-  // const showInputHandler = () => {
-  //   onSearchGeneralMode();
-  //   searchGeneral && onExpandMode(null);
-  //   !selectedExpand && !searchGeneral && onExpandMode("MOVIES");
-  // };
+  const { onSearchQueryTerm, onExpandMode, selectedExpand } =
+    useSearchContext();
 
   const searchHandler = (e) => {
     e.preventDefault();
-    !searchGeneral && onSearchGeneralMode();
     let input = document.getElementById("searchInput");
     const searchTerm = input.value;
     searchTerm !== "" && !selectedExpand && onExpandMode("MOVIES");

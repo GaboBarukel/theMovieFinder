@@ -3,6 +3,7 @@ import { useSearchContext } from "../../Hooks/useSearchcontext";
 
 import "./modesContainer.css";
 import ModeCard from "./ModeCard";
+import MovieItem from "../List/MovieItem";
 import ModeButton from "./ModeButton";
 
 let Modes = [{ title: "MOVIES" }, { title: "TV" }, { title: "PEOPLE" }];
@@ -27,13 +28,12 @@ const ModesContainer = () => {
         ))}
       </div>
       <div className="modesListContainer">
-        {Modes.map((mode) => (
-          <ModeCard
-            title={mode.title}
-            key={mode.title}
-            searchedMovies={searchedMovies}
-          />
-        ))}
+        {searchedMovies?.map(
+          (movie) =>
+            (movie.backdrop_path || movie.profile_path) && (
+              <MovieItem movieData={movie} key={movie.id} />
+            )
+        )}
       </div>
     </>
   );

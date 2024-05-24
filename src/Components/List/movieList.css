@@ -1,7 +1,8 @@
 .modeItemContainer {
   display: flex;
   justify-content: center;
-  max-height: 160px;
+  position: relative;
+  max-height: 140px;
   width: 100%;
   user-select: none;
 }
@@ -22,8 +23,7 @@
 .modeMovieTitle {
   position: absolute;
   text-align: center;
-  max-width: 30%;
-  min-height: 15%;
-  bottom: 0.5em;
+  max-height: 5%;
+  bottom: -1em;
   color: var(--accent);
 }

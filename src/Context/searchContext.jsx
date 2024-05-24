@@ -6,16 +6,10 @@ const apiKey = import.meta.env.VITE_API_KEY;
 // let URL = `https://api.themoviedb.org/3/search/`;
 
 export function SearchContextProvider({ children }) {
-  const [searchGeneral, setSearch] = useState(false);
   const [searchedMovies, setSearchedMovies] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedExpand, setSelectedExpand] = useState("MOVIES");
+  const [selectedExpand, setSelectedExpand] = useState(null);
   const [searchURL, setSearchURL] = useState("");
-
-  const onSearchGeneralMode = () => {
-    searchGeneral && setSearchTerm("");
-    setSearch((prevSearch) => !prevSearch);
-  };
 
   const onSearchQueryTerm = (queryTerm) => {
     setSearchTerm(queryTerm);
@@ -47,8 +41,6 @@ export function SearchContextProvider({ children }) {
   return (
     <SearchContext.Provider
       value={{
-        searchGeneral,
-        onSearchGeneralMode,
         searchTerm,
         onSearchQueryTerm,
         selectedExpand,
