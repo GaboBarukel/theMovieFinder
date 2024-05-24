@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PopularCarousel from "./PopularCarousel";
+import SearchForm from "./Form/SearchForm";
 import "./heroSection.css";
 
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -15,14 +16,15 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="heroContainer">
-      <h1 className="title">
-        <span className="titlespan">MOVIE</span>
-        <br />
-        FINDER
-      </h1>
-      <PopularCarousel popularMovies={popularMovies} />
-    </div>
+    <>
+      <div className="heroContainer">
+        <div className="titlaSearchContainer">
+          <h1 className="title">MOVIE FINDER</h1>
+          <SearchForm />
+        </div>
+        <PopularCarousel popularMovies={popularMovies} />
+      </div>
+    </>
   );
 };
 

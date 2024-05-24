@@ -9,7 +9,7 @@ export function SearchContextProvider({ children }) {
   const [searchGeneral, setSearch] = useState(false);
   const [searchedMovies, setSearchedMovies] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedExpand, setSelectedExpand] = useState(null);
+  const [selectedExpand, setSelectedExpand] = useState("MOVIES");
   const [searchURL, setSearchURL] = useState("");
 
   const onSearchGeneralMode = () => {

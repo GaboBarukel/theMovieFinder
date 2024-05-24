@@ -29,18 +29,10 @@ const SearchForm = () => {
   };
 
   return (
-    <div className="searchBackGradient">
-      <div className="searchContainer">
-        <form
-          className="inputContainer"
-          id="searchForm"
-          onSubmit={searchHandler}
-        >
-          <input className="searchInput" id="searchInput" autoFocus />
-          <IoSearchSharp className="searchIcon" onClick={searchHandler} />
-        </form>
-      </div>
-    </div>
+    <form className="inputContainer" id="searchForm" onSubmit={searchHandler}>
+      <input className="searchInput" id="searchInput" autoFocus />
+      <IoSearchSharp className="searchIcon" onClick={searchHandler} />
+    </form>
   );
 };
 

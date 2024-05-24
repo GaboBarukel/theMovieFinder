@@ -1,5 +1,5 @@
-import { useSearchContext } from "../../../Hooks/useSearchcontext";
-import MovieItem from "../../List/MovieItem";
+import { useSearchContext } from "../../Hooks/useSearchcontext";
+import MovieItem from "../List/MovieItem";
 
 const ModeCard = ({ title, searchedMovies }) => {
   const {

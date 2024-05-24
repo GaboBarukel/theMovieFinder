@@ -1,7 +1,7 @@
 .modesListContainer {
-  height: 50vh;
+  height: 45vh;
   width: 100%;
-  padding: 1em 3em;
+  padding: 0em 3em 0.5em 3em;
   gap: 1em;
   background-color: var(--main-bg-color);
   display: grid;
@@ -10,11 +10,25 @@
   user-select: none;
 }
 
+.modesSearchTitle {
+  margin-block: 0.3em;
+  color: var(--secondary-bg);
+  text-align: center;
+}
+
+.modesButtonContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 0.5em 0;
+  margin-inline: 3em;
+  border-bottom: 1px solid var(--secondary-bg);
+}
+
 .modeCard {
   display: flex;
   height: 100%;
-  border: 2px solid var(--accent);
-  border-radius: 0.5rem;
+  /* border: 2px solid var(--accent);
+  border-radius: 0.5rem; */
   transition: background-color 150ms ease-in-out;
 }
 

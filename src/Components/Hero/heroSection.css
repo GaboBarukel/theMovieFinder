@@ -4,18 +4,20 @@
   display: grid;
   align-items: center;
   grid-template-columns: repeat(3, minmax(min(100%, 250px), 1fr));
-  gap: 1em;
-  padding: 1em 3em;
+  column-gap: 1em;
+  padding: 0.5em 3em;
   background-color: var(--secondary-font);
+  border-bottom: 1px solid var(--secondary-bg);
   user-select: none;
 }
 
-.titlespan {
-  font-size: 1.07em;
+.titlaSearchContainer {
+  grid-column: span 2;
 }
 
 .title {
   text-align: start;
   font-size: 6em;
-  line-height: 0.8em;
+  /* font-family: 200;
+  line-height: 0.8em; */
 }

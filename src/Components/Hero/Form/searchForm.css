@@ -1,47 +1,39 @@
 .searchBackGradient {
   padding: 0em 3em;
-  height: 10vh;
-  background: linear-gradient(
+  height: 8vh;
+  background-color: var(--secondary-font);
+  /* background: linear-gradient(
     to bottom,
     var(--secondary-font) 10%,
     transparent 99%
-  );
-}
-
-.searchContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding-inline: 0.5em;
-  border-radius: 0.5rem;
-  background-color: var(--secondary-bg);
+  ); */
 }
 
 .inputContainer {
-  width: 85%;
-  padding: 0.2em 0.5em;
+  grid-column: span 3;
+  width: 97%;
+  padding: 0em;
+  height: 8vh;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  height: 80%;
-  background-color: var(--main-bg-color);
-  border: 1px solid var(--accent);
-  border-radius: 0.5em;
+  justify-content: center;
+  gap: 0.5em;
+  background-color: var(--secondary-font);
+  /* border: 1px solid var(--accent); */
+  /* border-radius: 0.5em; */
   transition: width 1000ms ease-in-out, margin-right 1000ms ease-in-out;
 }
 
 .searchInput {
   padding: 1em 1em;
-  width: 90%;
+  width: 100%;
   height: 80%;
   color: var(--accent);
-  background-color: var(--secondary-font);
+  background-color: var(--main-bg-color);
   border-radius: 0.5em;
   border: none;
   font-size: 1em;
   font-weight: 600;
-  transition: all 1000ms ease-in-out;
 }
 
 .searchInput:focus {

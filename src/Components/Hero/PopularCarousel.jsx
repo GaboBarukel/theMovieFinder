@@ -58,7 +58,6 @@ const PopularCarousel = ({ popularMovies }) => {
       onMouseEnter={onHoverCarouselHandler}
       onMouseLeave={onHoverCarouselHandler}
     >
-      <div className="carousel-gradient"></div>
       {/* <span className="carouselTitle">Trending</span> */}
       <button
         onClick={showPrevImage}

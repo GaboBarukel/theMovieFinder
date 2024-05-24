@@ -1,8 +1,9 @@
 import { useEffect } from "react";
-import { useSearchContext } from "../../../Hooks/useSearchcontext";
+import { useSearchContext } from "../../Hooks/useSearchcontext";
 
 import "./modesContainer.css";
 import ModeCard from "./ModeCard";
+import ModeButton from "./ModeButton";
 
 let Modes = [{ title: "MOVIES" }, { title: "TV" }, { title: "PEOPLE" }];
 
@@ -18,15 +19,23 @@ const ModesContainer = () => {
   }, [searchTerm]);
 
   return (
-    <div className="modesListContainer">
-      {Modes.map((mode) => (
-        <ModeCard
-          title={mode.title}
-          key={mode.title}
-          searchedMovies={searchedMovies}
-        />
-      ))}
-    </div>
+    <>
+      <h2 className="modesSearchTitle">Search Modes</h2>
+      <div className="modesButtonContainer">
+        {Modes.map((mode) => (
+          <ModeButton title={mode.title} key={mode.title} />
+        ))}
+      </div>
+      <div className="modesListContainer">
+        {Modes.map((mode) => (
+          <ModeCard
+            title={mode.title}
+            key={mode.title}
+            searchedMovies={searchedMovies}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 

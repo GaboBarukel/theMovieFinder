@@ -9,25 +9,9 @@
   overflow: hidden;
 }
 
-.carousel-gradient {
-  height: 100%;
-  width: 100%;
-  /* z-index: 1; */
-  position: absolute;
-  background-image: linear-gradient(
-    to left,
-    var(--secondary-font) 1%,
-    transparent 5%,
-    transparent 95%,
-    var(--secondary-font) 99%
-  );
-  top: 0;
-  left: 0;
-}
-
 .carouselTitle {
   position: absolute;
-  color: var(--accent);
+  color: var(--secondary-font);
 }
 
 .slider-btn {
