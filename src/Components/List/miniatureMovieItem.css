@@ -1,0 +1,29 @@
+.miniatureContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 30%;
+  user-select: none;
+}
+
+.miniaturePoster {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  max-height: 80px;
+  border-radius: 0.5rem;
+  transition: scale 300ms ease-in-out;
+}
+
+.miniaturePoster:hover {
+  cursor: pointer;
+  scale: 1.05;
+}
+
+.miniatureMovieTitle {
+  position: absolute;
+  text-align: center;
+  font-size: 1rem;
+  max-height: 5%;
+  bottom: -0.5rem;
+  color: var(--secondary-bg);
+}

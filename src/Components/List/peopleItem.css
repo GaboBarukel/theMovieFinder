@@ -1,0 +1,51 @@
+.peopleItemContainer {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(4, minmax(min(100%, 250px), 1fr));
+  width: 100%;
+  user-select: none;
+}
+
+.peoplePosterContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.peoplePoster {
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  max-height: 200px;
+  border-radius: 0.5rem;
+}
+
+.peopleContent {
+  grid-column: span 3;
+  height: 100%;
+}
+
+.peopleName {
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.peopleDepartment,
+.knownForTitle {
+  margin-top: 0em;
+  color: var(--secondary-bg);
+}
+
+.peopleDepartmentDescription {
+  font-weight: 600;
+}
+
+.knownForTitle {
+  width: 15%;
+  align-self: baseline;
+}
+
+.knownForContainer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}

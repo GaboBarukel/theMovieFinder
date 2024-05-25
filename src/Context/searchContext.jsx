@@ -9,7 +9,9 @@ export function SearchContextProvider({ children }) {
   const [searchedMovies, setSearchedMovies] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedExpand, setSelectedExpand] = useState("MOVIES");
-  const [searchURL, setSearchURL] = useState("");
+  const [searchURL, setSearchURL] = useState(
+    `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=es-419&`
+  );
 
   const onSearchQueryTerm = (queryTerm) => {
     setSearchTerm(queryTerm);
@@ -23,7 +25,7 @@ export function SearchContextProvider({ children }) {
       setSearchedMovies(null);
       moveModeIndicator(title);
       setSelectedExpand(title);
-      if (title === "MOVIES" || !title) {
+      if (title === "MOVIES") {
         setSearchURL(
           `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=es-419&`
         );

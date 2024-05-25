@@ -1,12 +1,7 @@
 import "./movieList.css";
 
 const MovieItem = ({ movieData }) => {
-  let imgSRC = "https://image.tmdb.org/t/p/w500";
-  if (movieData.backdrop_path) {
-    imgSRC += movieData.backdrop_path;
-  } else {
-    imgSRC += movieData.profile_path;
-  }
+  let imgSRC = "https://image.tmdb.org/t/p/w500" + movieData.backdrop_path;
 
   return (
     <div className="modeItemContainer">
