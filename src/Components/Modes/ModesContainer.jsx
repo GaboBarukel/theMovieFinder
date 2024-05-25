@@ -22,13 +22,7 @@ const ModesContainer = () => {
     let queryURL = searchURL + `query=${searchTerm}&page=1&include_adult=false`;
     fetch(queryURL)
       .then((res) => res.json())
-      .then((data) =>
-        setSearchedMovies(
-          selectedExpand === "PEOPLE"
-            ? data.results.slice(0, 1)
-            : data.results.slice(0, 3)
-        )
-      );
+      .then((data) => setSearchedMovies(data.results.slice(0, 3)));
   }, [searchTerm]);
 
   return (

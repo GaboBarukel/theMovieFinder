@@ -19,12 +19,10 @@ const PeopleItem = ({ peopleData }) => {
         </p>
         <div className="knownForContainer">
           <p className="knownForTitle">Known For:</p>
-          {peopleData.known_for?.map(
-            (movie) =>
-              movie.backdrop_path && (
-                <MiniatureMovieItem movieData={movie} key={movie.id} />
-              )
-          )}
+
+          {peopleData.known_for?.map((movie) => (
+            <span className="movieSpan">{movie.title}</span>
+          ))}
         </div>
       </div>
     </div>
