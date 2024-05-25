@@ -19,9 +19,24 @@
 .modesButtonContainer {
   display: flex;
   justify-content: space-between;
+  position: relative;
   padding-block: 0.5em 0;
   margin-inline: 3em;
   border-bottom: 1px solid var(--secondary-bg);
+}
+
+.modesButtonContainer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  scale: var(--_width, 0.076) 1;
+  translate: var(--_left, 0px) 0;
+  transform-origin: left;
+  transition: scale 250ms ease-in-out, translate 250ms ease-in-out;
+  background: var(--accent);
 }
 
 .modeCard {

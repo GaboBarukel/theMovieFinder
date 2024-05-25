@@ -9,8 +9,13 @@ import ModeButton from "./ModeButton";
 let Modes = [{ title: "MOVIES" }, { title: "TV" }, { title: "PEOPLE" }];
 
 const ModesContainer = () => {
-  const { searchTerm, setSearchedMovies, searchedMovies, searchURL } =
-    useSearchContext();
+  const {
+    searchTerm,
+    setSearchedMovies,
+    searchedMovies,
+    searchURL,
+    selectedExpand,
+  } = useSearchContext();
 
   useEffect(() => {
     let queryURL = searchURL + `query=${searchTerm}&page=1&include_adult=false`;

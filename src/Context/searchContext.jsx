@@ -8,7 +8,7 @@ const apiKey = import.meta.env.VITE_API_KEY;
 export function SearchContextProvider({ children }) {
   const [searchedMovies, setSearchedMovies] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedExpand, setSelectedExpand] = useState(null);
+  const [selectedExpand, setSelectedExpand] = useState("MOVIES");
   const [searchURL, setSearchURL] = useState("");
 
   const onSearchQueryTerm = (queryTerm) => {
@@ -17,10 +17,11 @@ export function SearchContextProvider({ children }) {
 
   const onExpandMode = (title) => {
     if (selectedExpand === title) {
-      setSearchedMovies(null);
-      setSelectedExpand(null);
+      setSearchedMovies(null); // --> revisar
+      // setSelectedExpand(null);
     } else {
       setSearchedMovies(null);
+      moveModeIndicator(title);
       setSelectedExpand(title);
       if (title === "MOVIES" || !title) {
         setSearchURL(
@@ -36,6 +37,47 @@ export function SearchContextProvider({ children }) {
         );
       }
     }
+  };
+
+  const moveModeIndicator = (nextButton) => {
+    const buttonContainer = document.querySelector(".modesButtonContainer");
+    const oldActiveButton = document.querySelector(".modeButtonActive");
+    const nextActiveButton = document.querySelector(`.${nextButton}`);
+    const newButtonPosition =
+      oldActiveButton.compareDocumentPosition(nextActiveButton);
+    let transitionWidth;
+
+    const nextButtonWidth =
+      nextActiveButton.offsetWidth / buttonContainer.offsetWidth;
+
+    if (newButtonPosition === 4) {
+      transitionWidth =
+        nextActiveButton.offsetLeft +
+        nextActiveButton.offsetWidth -
+        oldActiveButton.offsetLeft;
+    } else {
+      transitionWidth =
+        oldActiveButton.offsetLeft +
+        oldActiveButton.offsetWidth -
+        nextActiveButton.offsetLeft;
+      buttonContainer.style.setProperty(
+        "--_left",
+        nextActiveButton.offsetLeft + "px"
+      );
+    }
+
+    buttonContainer.style.setProperty(
+      "--_width",
+      transitionWidth / buttonContainer.offsetWidth
+    );
+
+    setTimeout(() => {
+      buttonContainer.style.setProperty(
+        "--_left",
+        nextActiveButton.offsetLeft + "px"
+      );
+      buttonContainer.style.setProperty("--_width", nextButtonWidth);
+    }, 280);
   };
 
   return (

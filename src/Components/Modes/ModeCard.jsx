@@ -2,13 +2,8 @@ import { useSearchContext } from "../../Hooks/useSearchcontext";
 import MovieItem from "../List/MovieItem";
 
 const ModeCard = ({ title, searchedMovies }) => {
-  const {
-    onExpandMode,
-    searchTerm,
-    searchGeneral,
-    selectedExpand,
-    onSearchQueryTerm,
-  } = useSearchContext();
+  const { onExpandMode, selectedExpand, onSearchQueryTerm } =
+    useSearchContext();
   let classesExpand = "modeCard";
 
   const updateExpand = () => {

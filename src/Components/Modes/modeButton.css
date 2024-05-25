@@ -1,8 +1,9 @@
 .modeButton {
   border: none;
   padding: 0.3em 0.7em;
-  color: var(--secondary-bg);
-  border-radius: 0.5em 0.5em 0 0;
+  color: var(--accent);
+  /* color: var(--secondary-bg); */
+  border-radius: 0.3em 0.3em 0 0;
   background-color: transparent;
   font-size: 1em;
   transition: background-color 200ms ease-in-out;
@@ -10,10 +11,9 @@
 
 .modeButton:hover {
   background-color: var(--secondary-bg);
-  color: var(--accent);
   cursor: pointer;
 }
 
-.modeButtonActive {
+/* .modeButtonActive {
   border-bottom: 1px solid var(--accent);
-}
+} */

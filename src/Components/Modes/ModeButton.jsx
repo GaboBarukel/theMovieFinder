@@ -14,7 +14,9 @@ const ModeButton = ({ title }) => {
   return (
     <button
       className={
-        selectedExpand !== title ? "modeButton" : "modeButton modeButtonActive"
+        selectedExpand !== title
+          ? `modeButton ${title}`
+          : `modeButton ${title} modeButtonActive`
       }
       onClick={modeButtonHanlder}
     >
