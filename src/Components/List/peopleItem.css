@@ -1,6 +1,6 @@
 .peopleItemContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(100px, 250px));
   user-select: none;
 }
 
@@ -24,28 +24,28 @@
 }
 
 .peopleName {
-  margin-bottom: 1rem;
+  margin-block: 0.3rem;
   color: var(--accent);
 }
 
 .peopleDepartment {
-  margin-top: 0em;
-  color: var(--secondary-bg);
+  margin-block: 0.3rem;
+  color: var(--font-accent);
 }
 
 .movieSpan {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400;
-  margin-left: 1rem;
-  margin-bottom: 0.2rem;
+  margin-left: 0.8rem;
   text-overflow: ellipsis;
-  color: var(--secondary-bg);
+  color: var(--font-accent);
+  border-bottom: 1px solid var(--secondary-font);
 }
 
 .knownForTitle {
-  justify-self: start;
-  margin-block: 0.5em 0.3em;
-  color: var(--secondary-bg);
+  margin-block: 0.8rem 0.3rem;
+  font-size: 0.9em;
+  color: var(--font-accent);
 }
 
 .peopleDepartmentDescription {
@@ -53,9 +53,10 @@
 }
 
 .knownForContainer {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: start;
+  align-content: space-evenly;
+  height: 100%;
 }
 
 .knownForList {

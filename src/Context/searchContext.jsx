@@ -18,6 +18,13 @@ export function SearchContextProvider({ children }) {
   };
 
   const onExpandMode = (title) => {
+    const titleAlign = document.querySelector(".modesSearchTitle");
+    const titleWidth = titleAlign.offsetWidth;
+    const searchTitleContainer = document.querySelector(
+      ".searchTitleContainer"
+    );
+    const searchTitleContainerWidth = searchTitleContainer.offsetWidth;
+
     if (selectedExpand === title) {
       setSearchedMovies(null); // --> revisar
       // setSelectedExpand(null);
@@ -29,13 +36,22 @@ export function SearchContextProvider({ children }) {
         setSearchURL(
           `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=es-419&`
         );
+        titleAlign.style.setProperty("--_text-align", "0px");
       } else if (title === "TV") {
         setSearchURL(
           `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&language=es-419&`
         );
+        titleAlign.style.setProperty(
+          "--_text-align",
+          `${(searchTitleContainerWidth / 2 - titleWidth / 2) * -1}px`
+        );
       } else if (title === "PEOPLE") {
         setSearchURL(
           `https://api.themoviedb.org/3/search/person?api_key=${apiKey}&language=es-419&`
+        );
+        titleAlign.style.setProperty(
+          "--_text-align",
+          `${(searchTitleContainerWidth - titleWidth) * -1}px`
         );
       }
     }
@@ -79,7 +95,7 @@ export function SearchContextProvider({ children }) {
         nextActiveButton.offsetLeft + "px"
       );
       buttonContainer.style.setProperty("--_width", nextButtonWidth);
-    }, 280);
+    }, 320);
   };
 
   return (

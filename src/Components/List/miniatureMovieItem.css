@@ -23,7 +23,8 @@
   position: absolute;
   text-align: center;
   font-size: 1rem;
+  font-weight: 600;
+  color: var(--secondary-bg);
   max-height: 5%;
   bottom: -0.5rem;
-  color: var(--secondary-bg);
 }

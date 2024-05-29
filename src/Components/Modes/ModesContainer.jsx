@@ -27,7 +27,9 @@ const ModesContainer = () => {
 
   return (
     <>
-      <h2 className="modesSearchTitle">Search Modes</h2>
+      <div className="searchTitleContainer">
+        <h2 className="modesSearchTitle">SEARCH MODES</h2>
+      </div>
       <div className="modesButtonContainer">
         {Modes.map((mode) => (
           <ModeButton title={mode.title} key={mode.title} />

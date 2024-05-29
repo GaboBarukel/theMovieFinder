@@ -1,16 +1,16 @@
 .modeButton {
   border: none;
   padding: 0.3em 0.7em;
-  color: var(--accent);
+  color: var(--font-accent);
   /* color: var(--secondary-bg); */
-  border-radius: 0.3em 0.3em 0 0;
+  border-radius: 0.2em 0.2em 0 0;
   background-color: transparent;
   font-size: 1em;
   transition: background-color 200ms ease-in-out;
 }
 
 .modeButton:hover {
-  background-color: var(--secondary-bg);
+  background-color: #8782677e;
   cursor: pointer;
 }
 
