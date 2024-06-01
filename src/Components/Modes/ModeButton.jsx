@@ -2,12 +2,10 @@ import { useSearchContext } from "../../Hooks/useSearchcontext";
 import "./modeButton.css";
 
 const ModeButton = ({ title }) => {
-  const { onExpandMode, selectedExpand, onSearchQueryTerm } =
-    useSearchContext();
+  const { onExpandMode, selectedExpand } = useSearchContext();
 
   function modeButtonHanlder() {
     onExpandMode(title);
-    onSearchQueryTerm("");
     document.getElementById("searchInput").focus();
   }
 

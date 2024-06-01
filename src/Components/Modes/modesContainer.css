@@ -13,7 +13,7 @@
   position: relative;
   height: 5vh;
   margin-block: 0.5em;
-  margin-inline: 3em;
+  margin-inline: 8em;
 }
 
 .modesSearchTitle {
@@ -23,7 +23,21 @@
   color: var(--font-accent);
   right: 0;
   translate: var(--_text-align, 0px);
-  transition: translate 320ms ease-in-out;
+  transition: translate 600ms cubic-bezier(0, 0.08, 0.24, 1.01);
+}
+
+.modesSearchTitle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  scale: 0.6 1;
+  translate: var(--_underline-right, 0) 5px;
+  transform-origin: bottom right;
+  transition: translate 600ms cubic-bezier(0, 0.08, 0.24, 1.01);
+  background: var(--secondary-bg);
 }
 
 .modesButtonContainer {
@@ -31,7 +45,7 @@
   justify-content: space-between;
   position: relative;
   margin-inline: 3em;
-  border-bottom: 1px solid var(--font-accent);
+  border-bottom: 1px solid var(--secondary-bg);
 }
 
 .modesButtonContainer::after {
@@ -40,10 +54,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: 3px;
-  scale: var(--_width, 0.076) 1;
+  height: 2px;
+  scale: var(--_width, 0.3333) 1;
   translate: var(--_left, 0px) 0;
-  transform-origin: left;
+  transform-origin: bottom left;
   transition: scale 300ms ease-in-out, translate 300ms ease-in-out;
   background: var(--accent);
 }
