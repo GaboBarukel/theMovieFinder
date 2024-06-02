@@ -32,13 +32,13 @@ export function SearchContextProvider({ children }) {
       moveModeIndicator(title);
       if (title === "MOVIES") {
         setSearchURL(
-          `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=es-419&`
+          `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&`
         );
         titleAlign.style.setProperty("--_text-align", "0px");
         titleAlign.style.setProperty("--_underline-right", "0px");
       } else if (title === "TV") {
         setSearchURL(
-          `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&language=es-419&`
+          `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&`
         );
         titleAlign.style.setProperty(
           "--_text-align",
@@ -46,11 +46,11 @@ export function SearchContextProvider({ children }) {
         );
         titleAlign.style.setProperty(
           "--_underline-right",
-          `${(searchTitleContainerWidth / 3 - titleWidth * 1.42) * -1}px`
+          `${(titleWidth / 5) * -1}px`
         );
       } else if (title === "PEOPLE") {
         setSearchURL(
-          `https://api.themoviedb.org/3/search/person?api_key=${apiKey}&language=es-419&`
+          `https://api.themoviedb.org/3/search/person?api_key=${apiKey}&`
         );
         titleAlign.style.setProperty(
           "--_text-align",
@@ -58,7 +58,7 @@ export function SearchContextProvider({ children }) {
         );
         titleAlign.style.setProperty(
           "--_underline-right",
-          `${(searchTitleContainerWidth / 3 - titleWidth * 1.22) * -1}px`
+          `${(titleWidth / 2.5) * -1}px`
         );
       }
     }

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSearchContext } from "../../Hooks/useSearchcontext";
 
 import "./modesContainer.css";
-import ModeCard from "./ModeCard";
+import Loading from "../../UI/Loading";
 import MovieItem from "../List/MovieItem";
 import PeopleItem from "../List/PopleItem";
 import ModeButton from "./ModeButton";
@@ -20,9 +20,10 @@ const ModesContainer = () => {
 
   useEffect(() => {
     let queryURL = searchURL + `query=${searchTerm}&page=1&include_adult=false`;
-    fetch(queryURL)
-      .then((res) => res.json())
-      .then((data) => setSearchedMovies(data.results.slice(0, 3)));
+    searchTerm !== "" &&
+      fetch(queryURL)
+        .then((res) => res.json())
+        .then((data) => setSearchedMovies(data.results.slice(0, 3)));
   }, [searchTerm]);
 
   return (
@@ -49,6 +50,10 @@ const ModesContainer = () => {
                   <MovieItem movieData={movie} key={movie.id} />
                 )
             )}
+        {!searchedMovies && <Loading />}
+        {searchedMovies && searchedMovies.length === 0 && (
+          <p className="noResults">No results for this search.</p>
+        )}
       </div>
     </>
   );

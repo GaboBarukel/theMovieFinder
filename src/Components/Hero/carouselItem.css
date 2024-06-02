@@ -29,6 +29,7 @@
   border-radius: 0.5rem;
   bottom: 0.8em;
   padding: 0.3em;
+  color: var(--font-accent);
 }
 
 .carouselMovieIcon {
@@ -37,13 +38,13 @@
   right: 2.5em;
   padding: 0.2em;
   border-radius: 50%;
+  color: var(--accent);
+  border: 1px solid var(--secondary-bg);
 }
 
 .carouselMovieTitle,
 .carouselMovieIcon {
   font-weight: 100;
   position: absolute;
-  border: 1px solid var(--secondary-bg);
   background-color: var(--main-bg-color);
-  color: var(--accent);
 }

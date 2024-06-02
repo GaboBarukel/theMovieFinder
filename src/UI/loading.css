@@ -1,0 +1,22 @@
+.loaderContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingRing {
+  font-size: 1.5rem;
+  color: var(--accent);
+  animation: 0.5s linear 0s infinite rotatingLoader;
+}
+
+@keyframes rotatingLoader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

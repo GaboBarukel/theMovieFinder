@@ -99,3 +99,9 @@
   margin-inline: 3em;
   color: var(--accent);
 }
+
+.noResults {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
