@@ -17,6 +17,18 @@
   border-radius: 0.5rem;
 }
 
+.noImage {
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  max-height: 200px;
+  border-radius: 0.5rem;
+}
+
+.noImage > * {
+  color: var(--secondary-bg);
+  height: 200px;
+}
+
 .peopleContent {
   height: 100%;
   display: flex;

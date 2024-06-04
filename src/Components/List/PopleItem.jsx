@@ -1,5 +1,5 @@
 import "./peopleItem.css";
-import MiniatureMovieItem from "./MiniatureMovieItem";
+import { FaUserLarge } from "react-icons/fa6";
 
 const PeopleItem = ({ peopleData }) => {
   let imgSRC = "https://image.tmdb.org/t/p/w500" + peopleData.profile_path;
@@ -7,7 +7,13 @@ const PeopleItem = ({ peopleData }) => {
   return (
     <div className="peopleItemContainer" key={peopleData.id}>
       <div className="peoplePosterContainer">
-        <img src={imgSRC} className="peoplePoster" alt={peopleData.name} />
+        {peopleData.profile_path ? (
+          <img src={imgSRC} className="peoplePoster" alt={peopleData.name} />
+        ) : (
+          <div className="noImage">
+            <FaUserLarge />
+          </div>
+        )}
       </div>
       <div className="peopleContent">
         <h4 className="peopleName">{peopleData.name}</h4>
@@ -19,13 +25,14 @@ const PeopleItem = ({ peopleData }) => {
         </p>
         <p className="knownForTitle">Known For:</p>
         <div className="knownForContainer">
-          {peopleData.known_for?.map(
-            (movie) =>
-              movie.title && (
-                <span className="movieSpan" key={movie.id}>
-                  {movie.title}
-                </span>
-              )
+          {peopleData.known_for?.map((movie) =>
+            movie.title ? (
+              <span className="movieSpan" key={movie.id}>
+                {movie.title}
+              </span>
+            ) : (
+              <span className="movieSpan">x</span>
+            )
           )}
         </div>
       </div>
