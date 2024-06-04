@@ -16,15 +16,19 @@ const ModesContainer = () => {
     searchedMovies,
     searchURL,
     selectedExpand,
+    trendingURL,
   } = useSearchContext();
 
   useEffect(() => {
     let queryURL = searchURL + `query=${searchTerm}&page=1&include_adult=false`;
-    searchTerm !== "" &&
-      fetch(queryURL)
-        .then((res) => res.json())
-        .then((data) => setSearchedMovies(data.results.slice(0, 3)));
-  }, [searchTerm]);
+    searchTerm !== ""
+      ? fetch(queryURL)
+          .then((res) => res.json())
+          .then((data) => setSearchedMovies(data.results.slice(0, 3)))
+      : fetch(trendingURL)
+          .then((res) => res.json())
+          .then((data) => setSearchedMovies(data.results.slice(0, 3)));
+  }, [searchTerm, trendingURL]);
 
   return (
     <>
@@ -37,13 +41,13 @@ const ModesContainer = () => {
         ))}
       </div>
       <div className="modesListContainer">
+        {searchTerm === "" && (
+          <h3 className="trendingTitle">{`Trending in ${selectedExpand.toLowerCase()} this week:`}</h3>
+        )}
         {selectedExpand === "PEOPLE"
-          ? searchedMovies?.map(
-              (people) =>
-                people.profile_path && (
-                  <PeopleItem peopleData={people} key={people.id} />
-                )
-            )
+          ? searchedMovies?.map((people) => (
+              <PeopleItem peopleData={people} key={people.id} />
+            ))
           : searchedMovies?.map(
               (movie) =>
                 movie.backdrop_path && (

@@ -7,13 +7,14 @@
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 10%), 1fr));
   user-select: none;
+  position: relative;
 }
 
 .searchTitleContainer {
   position: relative;
   height: 5vh;
   margin-block: 0.5em;
-  margin-inline: 8em;
+  margin-inline: 9em;
 }
 
 .modesSearchTitle {
@@ -60,6 +61,15 @@
   transform-origin: bottom left;
   transition: scale 300ms ease-in-out, translate 300ms ease-in-out;
   background: var(--accent);
+}
+
+.trendingTitle {
+  position: absolute;
+  top: 0;
+  left: 3em;
+  margin-block: 0.5em;
+  font-size: 1em;
+  color: var(--secondary-bg);
 }
 
 .modeCard {

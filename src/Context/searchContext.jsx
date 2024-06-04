@@ -7,10 +7,14 @@ const apiKey = import.meta.env.VITE_API_KEY;
 
 export function SearchContextProvider({ children }) {
   const [searchedMovies, setSearchedMovies] = useState(null);
+  const [trendingResults, setTrendingResults] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedExpand, setSelectedExpand] = useState("MOVIES");
   const [searchURL, setSearchURL] = useState(
-    `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=es-419&`
+    `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&`
+  );
+  const [trendingURL, setTrendingURL] = useState(
+    `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&`
   );
 
   const onSearchQueryTerm = (queryTerm) => {
@@ -34,11 +38,17 @@ export function SearchContextProvider({ children }) {
         setSearchURL(
           `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&`
         );
+        setTrendingURL(
+          `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&`
+        );
         titleAlign.style.setProperty("--_text-align", "0px");
         titleAlign.style.setProperty("--_underline-right", "0px");
       } else if (title === "TV") {
         setSearchURL(
           `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&`
+        );
+        setTrendingURL(
+          `https://api.themoviedb.org/3/trending/tv/week?api_key=${apiKey}&`
         );
         titleAlign.style.setProperty(
           "--_text-align",
@@ -51,6 +61,9 @@ export function SearchContextProvider({ children }) {
       } else if (title === "PEOPLE") {
         setSearchURL(
           `https://api.themoviedb.org/3/search/person?api_key=${apiKey}&`
+        );
+        setTrendingURL(
+          `https://api.themoviedb.org/3/trending/person/week?api_key=${apiKey}&`
         );
         titleAlign.style.setProperty(
           "--_text-align",
@@ -123,6 +136,9 @@ export function SearchContextProvider({ children }) {
         searchedMovies,
         setSearchedMovies,
         searchURL,
+        trendingURL,
+        trendingResults,
+        setTrendingResults,
       }}
     >
       {children}
